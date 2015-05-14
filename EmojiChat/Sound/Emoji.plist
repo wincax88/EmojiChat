@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Peoper</key>
+	<array>
+		<dict>
+			<key>sound</key>
+			<string>smile.wav</string>
+			<key>name</key>
+			<string>Grinning Face</string>
+			<key>emoji</key>
+			<string>😄</string>
+		</dict>
+	</array>
+</dict>
+</plist>
