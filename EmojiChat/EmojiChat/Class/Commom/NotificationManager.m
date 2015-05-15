@@ -200,7 +200,7 @@ static id _sharedInstance;
 {
     PFInstallation *currentInstallation = [PFInstallation currentInstallation];
     [currentInstallation setDeviceTokenFromData:deviceToken];
-    currentInstallation.channels = @[@"global", currentInstallation.objectId];
+    currentInstallation.channels = @[@"global", currentInstallation.installationId];
     [currentInstallation saveInBackground];
 }
 

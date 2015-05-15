@@ -20,17 +20,22 @@
 
 @interface LoginViewControllerEx ()
 <
-UITextFieldDelegate
+UITextFieldDelegate,
+UITableViewDataSource,
+UITableViewDelegate
 >
 {
     NSString *account;
     NSString *password;
+    
+    NSArray *CellIdentifiers;
 }
 
 @property (strong, nonatomic) IBOutlet UITextField *accountTextField;
 @property (strong, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (strong, nonatomic) IBOutlet UIButton *loginButton;
 @property (strong, nonatomic) IBOutlet UIButton *forgetButton;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 - (IBAction)onLoginTouched:(id)sender;
 - (IBAction)onForgetTouched:(id)sender;
@@ -44,6 +49,7 @@ UITextFieldDelegate
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    CellIdentifiers = @[@"PhoneCell", @"PasswordCell", @"LoginCell", @"ForgotPasswordCell"];
     // Do any additional setup after loading the view from its nib.
     account = [ApplicationManager sharedManager].localSettingData.lastLoginAccount;
     
@@ -104,7 +110,7 @@ UITextFieldDelegate
 - (void)loadForgotPasswordViewController
 {
     
-    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"SMSRegister" bundle:[NSBundle mainBundle]];
+    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"RegisterAndLogin" bundle:[NSBundle mainBundle]];
     UINavigationController * nv = [storyboard instantiateViewControllerWithIdentifier:@"ForgotPassword"];
     SMSRegisterViewController *controller = [[nv childViewControllers] firstObject];
     controller.phoneNumber = self.accountTextField.text;
@@ -127,7 +133,7 @@ UITextFieldDelegate
 
 - (void)loadRegisterViewController
 {
-    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"SMSRegister" bundle:[NSBundle mainBundle]];
+    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"RegisterAndLogin" bundle:[NSBundle mainBundle]];
     UINavigationController * nv = [storyboard instantiateViewControllerWithIdentifier:@"SMSRegisterViewController"];
     SMSRegisterViewController *controller = [[nv childViewControllers] firstObject];
     __weak __typeof(self)weakSelf = self;
@@ -150,7 +156,7 @@ UITextFieldDelegate
 }
 
 - (void)loadSetPasswordViewController:(BOOL)registerMode phone:(NSString*)phone {
-    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"SMSRegister" bundle:[NSBundle mainBundle]];
+    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"RegisterAndLogin" bundle:[NSBundle mainBundle]];
     UINavigationController *nv;
     if (registerMode) {
         nv = [storyboard instantiateViewControllerWithIdentifier:@"SetPasswordViewController"];
@@ -284,6 +290,39 @@ UITextFieldDelegate
 - (void)didLoginFailed:(NSNumber*)errorCode message:(NSString*)errorMessage
 {
     [YBUtility showErrorMessageInView:self.view message:errorMessage errorCode:errorCode];
+}
+
+#pragma mark Table View Data Source Methods
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [CellIdentifiers count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // @"PhoneCell", @"PasswordCell", @"LoginCell", @"ForgotPasswordCell"
+    NSString *Identifier = [CellIdentifiers objectAtIndex:indexPath.row];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:Identifier ];
+    
+    if ([Identifier isEqualToString:@"PhoneCell"]) {
+        self.accountTextField = (UITextField*)[cell viewWithTag:1];
+    }
+    else if ([Identifier isEqualToString:@"PasswordCell"]) {
+        self.passwordTextField = (UITextField*)[cell viewWithTag:1];
+    }
+    else if ([Identifier isEqualToString:@"LoginCell"]) {
+        self.loginButton = (UIButton*)[cell viewWithTag:1];
+    }
+    else if ([Identifier isEqualToString:@"ForgotPasswordCell"]) {
+        self.forgetButton = (UIButton*)[cell viewWithTag:1];
+    }
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 

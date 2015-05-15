@@ -111,7 +111,7 @@
 
 - (void)loadLoginViewController {
 #if (USING_SMS_REGISTER)
-    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"SMSRegister" bundle:[NSBundle mainBundle]];
+    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"RegisterAndLogin" bundle:[NSBundle mainBundle]];
     UINavigationController * nv = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewControllerEx"];
     LoginViewControllerEx *controller = [[nv childViewControllers] firstObject];
     __weak __typeof(self)weakSelf = self;

@@ -33,6 +33,8 @@
 		4C0FD8281B049DF4009B8B74 /* Emoji.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C0FD8271B049DF4009B8B74 /* Emoji.plist */; };
 		4C0FD8291B049DF4009B8B74 /* Emoji.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C0FD8271B049DF4009B8B74 /* Emoji.plist */; };
 		4C0FD82A1B049DF4009B8B74 /* Emoji.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C0FD8271B049DF4009B8B74 /* Emoji.plist */; };
+		4C17263B1B05871E0046B19D /* RegisterAndLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C17263A1B05871E0046B19D /* RegisterAndLogin.storyboard */; };
+		4C17263D1B05DDD30046B19D /* Friends.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C17263C1B05DDD30046B19D /* Friends.storyboard */; };
 		4C300F441AFCBEDC0003CB77 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C300F431AFCBEDC0003CB77 /* main.m */; };
 		4C300F471AFCBEDC0003CB77 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C300F461AFCBEDC0003CB77 /* AppDelegate.m */; };
 		4C300F4A1AFCBEDC0003CB77 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C300F491AFCBEDC0003CB77 /* ViewController.m */; };
@@ -370,6 +372,8 @@
 		4C03DE031B03287D00D49C88 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		4C03DE051B0328AA00D49C88 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		4C0FD8271B049DF4009B8B74 /* Emoji.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Emoji.plist; path = Sound/Emoji.plist; sourceTree = SOURCE_ROOT; };
+		4C17263A1B05871E0046B19D /* RegisterAndLogin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RegisterAndLogin.storyboard; sourceTree = "<group>"; };
+		4C17263C1B05DDD30046B19D /* Friends.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Friends.storyboard; sourceTree = "<group>"; };
 		4C300F3E1AFCBEDC0003CB77 /* EmojiChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmojiChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C300F421AFCBEDC0003CB77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C300F431AFCBEDC0003CB77 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -984,6 +988,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		4C1726391B0586FA0046B19D /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				4C17263A1B05871E0046B19D /* RegisterAndLogin.storyboard */,
+				4C17263C1B05DDD30046B19D /* Friends.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
 		4C300F351AFCBEDC0003CB77 = {
 			isa = PBXGroup;
 			children = (
@@ -1016,6 +1029,7 @@
 		4C300F401AFCBEDC0003CB77 /* EmojiChat */ = {
 			isa = PBXGroup;
 			children = (
+				4C1726391B0586FA0046B19D /* Storyboard */,
 				4C03DDEC1B03206E00D49C88 /* EmojiChat.entitlements */,
 				4C3728B81AFDAEC500088528 /* UI */,
 				4C37288F1AFDAEBB00088528 /* Class */,
@@ -2173,6 +2187,7 @@
 				4C3728FC1AFDAEC500088528 /* RegisterAndLogin.storyboard in Resources */,
 				4C3728721AFDAE0700088528 /* PEPhotoCropEditor.bundle in Resources */,
 				4C300F521AFCBEDC0003CB77 /* LaunchScreen.xib in Resources */,
+				4C17263B1B05871E0046B19D /* RegisterAndLogin.storyboard in Resources */,
 				4C3728891AFDAE0700088528 /* SSKeychain.strings in Resources */,
 				4C3727DA1AFDAE0700088528 /* moviePlay.png in Resources */,
 				4C3728401AFDAE0700088528 /* JSQMessagesCollectionViewCellOutgoing.xib in Resources */,
@@ -2183,6 +2198,7 @@
 				4C37281A1AFDAE0700088528 /* bubble_min_tailless@2x.png in Resources */,
 				4C3728071AFDAE0700088528 /* iRate.bundle in Resources */,
 				4C300F4F1AFCBEDC0003CB77 /* Images.xcassets in Resources */,
+				4C17263D1B05DDD30046B19D /* Friends.storyboard in Resources */,
 				4C3728181AFDAE0700088528 /* bubble_min@2x.png in Resources */,
 				4C3727D71AFDAE0700088528 /* movieFullscreen@2x.png in Resources */,
 				4C3728091AFDAE0700088528 /* iVersion.bundle in Resources */,

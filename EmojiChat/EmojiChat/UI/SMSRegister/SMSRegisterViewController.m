@@ -336,7 +336,7 @@ UITableViewDelegate
         return;
     }
     
-    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"SMSRegister" bundle:[NSBundle mainBundle]];
+    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"RegisterAndLogin" bundle:[NSBundle mainBundle]];
     UINavigationController *nv = [storyboard instantiateViewControllerWithIdentifier:@"VerifyViewController"];
     VerifyViewController* controller = [[nv childViewControllers] firstObject];
     NSString *areaCode = _defaultCode;
