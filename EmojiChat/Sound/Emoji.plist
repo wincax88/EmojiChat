@@ -5,12 +5,40 @@
 	<key>Peoper</key>
 	<array>
 		<dict>
-			<key>sound</key>
-			<string>smile.wav</string>
+			<key>id</key>
+			<string>100</string>
 			<key>name</key>
 			<string>Grinning Face</string>
+			<key>known as</key>
+			<string>Smiley Face,Happy Face</string>
 			<key>emoji</key>
 			<string>😄</string>
+			<key>sound</key>
+			<string>Grinning Face.wav</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<string>101</string>
+			<key>name</key>
+			<string>Grinning Face With Smiling Eyes</string>
+			<key>known as</key>
+			<string>Frustrated, Freezing, Cold</string>
+			<key>emoji</key>
+			<string>😁</string>
+			<key>sound</key>
+			<string>Grinning Face With Smiling Eyes.wav</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<string>102</string>
+			<key>name</key>
+			<string>Face With Tears Of Joy</string>
+			<key>known as</key>
+			<string>Laughing, Laughing Crying, Happy Tears,Laughing Tears,LOL</string>
+			<key>emoji</key>
+			<string>😂</string>
+			<key>sound</key>
+			<string>Face With Tears Of Joy.wav</string>
 		</dict>
 	</array>
 </dict>
