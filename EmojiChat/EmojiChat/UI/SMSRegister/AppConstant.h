@@ -47,7 +47,6 @@
 #define		PF_USER_THUMBNAIL					@"thumbnail"			//	File
 #define		PF_USER_NICKNAME					@"nickname"             //	String
 #define		PF_USER_PHONE                       @"phone"                //	String
-#define		PF_USER_PUSH_CHANNEL                @"pushChannel"          //	String
 //-----------------------------------------------------------------------
 #define		PF_GROUP_CLASS_NAME					@"Group"				//	Class name
 #define		PF_GROUP_NAME						@"name"					//	String

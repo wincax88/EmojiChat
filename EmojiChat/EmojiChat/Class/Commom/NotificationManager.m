@@ -265,7 +265,7 @@ static id _sharedInstance;
         //[queryInstallation whereKey:PF_INSTALLATION_USER matchesQuery:query];
         
         PFPush *push = [[PFPush alloc] init];
-        [push setChannels:@[ buddy[PF_USER_PUSH_CHANNEL] ]];
+        //[push setChannels:@[ buddy[PF_USER_PUSH_CHANNEL] ]];
         //[push setQuery:queryInstallation];
         [push setData:data];
         if ([UIApplication sharedApplication].applicationState == UIApplicationStateActive) {
