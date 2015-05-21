@@ -419,6 +419,30 @@
             </objects>
             <point key="canvasLocation" x="22" y="2281"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="j2d-63-S1J">
+            <objects>
+                <viewController id="8Tz-Rb-PQ7" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OSq-cA-57o"/>
+                        <viewControllerLayoutGuide type="bottom" id="NGk-v3-US4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9bh-8f-cvh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="300"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GRP-cr-Ul1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="22" y="2768"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="v65-6z-lNW">
             <objects>
@@ -588,7 +612,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icon_chat" width="100" height="100"/>
+        <image name="icon_chat" width="32" height="32"/>
         <image name="icon_sent" width="32" height="32"/>
         <image name="icon_user" width="32" height="32"/>
         <image name="red_circle" width="90" height="90"/>
