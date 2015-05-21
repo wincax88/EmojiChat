@@ -2,7 +2,7 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Peoper</key>
+	<key>People</key>
 	<array>
 		<dict>
 			<key>id</key>
@@ -37,6 +37,30 @@
 			<string>Laughing, Laughing Crying, Happy Tears,Laughing Tears,LOL</string>
 			<key>emoji</key>
 			<string>😂</string>
+			<key>sound</key>
+			<string>Face With Tears Of Joy.wav</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<string>103</string>
+			<key>name</key>
+			<string>Smiling Face With Open Mouth</string>
+			<key>known as</key>
+			<string>Happy,Happy Face,Smiley Face,Grinning Face</string>
+			<key>emoji</key>
+			<string>😃</string>
+			<key>sound</key>
+			<string>Face With Tears Of Joy.wav</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<string>104</string>
+			<key>name</key>
+			<string>Smiling Face With Open Mouth And Smiling Eyes</string>
+			<key>known as</key>
+			<string>Smiley Face,Grinning Face,Happy Face</string>
+			<key>emoji</key>
+			<string>😄</string>
 			<key>sound</key>
 			<string>Face With Tears Of Joy.wav</string>
 		</dict>
