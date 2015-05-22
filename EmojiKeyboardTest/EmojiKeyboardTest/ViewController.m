@@ -46,7 +46,6 @@ AGEmojiKeyboardViewDataSource
         emojiKeyboardView.delegate = self;
     }
 
-    [emojiKeyboardView.segmentsBar setSelectedSegmentIndex:2];
     self.textField.inputView = emojiKeyboardView;
 }
 
@@ -101,20 +100,58 @@ AGEmojiKeyboardViewDataSource
 
 #pragma mark - AGEmojiKeyboardViewDataSource
 - (UIImage *)emojiKeyboardView:(AGEmojiKeyboardView *)emojiKeyboardView imageForSelectedCategory:(AGEmojiKeyboardViewCategoryImage)category {
-    UIImage *img = [self randomImage];
-    [img imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *img;
+    if (category == AGEmojiKeyboardViewCategoryImageRecent) {
+        img = [UIImage imageNamed:@"ic_emoji_recent_light_normal"];
+    }
+    else if (category == AGEmojiKeyboardViewCategoryImageFace) {
+        img = [UIImage imageNamed:@"orca_emoji_category_people"];
+    }
+    else if (category == AGEmojiKeyboardViewCategoryImageBell) {
+        img = [UIImage imageNamed:@"orca_emoji_category_objects"];
+    }
+    else if (category == AGEmojiKeyboardViewCategoryImageFlower) {
+        img = [UIImage imageNamed:@"orca_emoji_category_nature"];
+    }
+    else if (category == AGEmojiKeyboardViewCategoryImageCar) {
+        img = [UIImage imageNamed:@"orca_emoji_category_cars"];
+    }
+    else if (category == AGEmojiKeyboardViewCategoryImageCharacters) {
+        img = [UIImage imageNamed:@"orca_emoji_category_punctuation"];
+    }
     return img;
 }
 
 - (UIImage *)emojiKeyboardView:(AGEmojiKeyboardView *)emojiKeyboardView imageForNonSelectedCategory:(AGEmojiKeyboardViewCategoryImage)category {
-    UIImage *img = [self randomImage];
-    [img imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+///    UIImage *img = [self randomImage];
+///    [img imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *img;
+    if (category == AGEmojiKeyboardViewCategoryImageRecent) {
+        img = [UIImage imageNamed:@"ic_emoji_recent_light_normal"];
+    }
+    else if (category == AGEmojiKeyboardViewCategoryImageFace) {
+        img = [UIImage imageNamed:@"orca_emoji_category_people"];
+    }
+    else if (category == AGEmojiKeyboardViewCategoryImageBell) {
+        img = [UIImage imageNamed:@"orca_emoji_category_objects"];
+    }
+    else if (category == AGEmojiKeyboardViewCategoryImageFlower) {
+        img = [UIImage imageNamed:@"orca_emoji_category_nature"];
+    }
+    else if (category == AGEmojiKeyboardViewCategoryImageCar) {
+        img = [UIImage imageNamed:@"orca_emoji_category_cars"];
+    }
+    else if (category == AGEmojiKeyboardViewCategoryImageCharacters) {
+        img = [UIImage imageNamed:@"orca_emoji_category_punctuation"];
+    }
+
     return img;
 }
 
 - (UIImage *)backSpaceButtonImageForEmojiKeyboardView:(AGEmojiKeyboardView *)emojiKeyboardView {
-    UIImage *img = [self randomImage];
-    [img imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+//    UIImage *img = [self randomImage];
+//    [img imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *img = [UIImage imageNamed:@"orca_emoji_backspace_back_normal"];
     return img;
 }
 
