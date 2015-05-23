@@ -1000,12 +1000,6 @@
 		4C300F351AFCBEDC0003CB77 = {
 			isa = PBXGroup;
 			children = (
-				4C03DE051B0328AA00D49C88 /* MobileCoreServices.framework */,
-				4C03DE031B03287D00D49C88 /* CFNetwork.framework */,
-				4C03DE011B03280B00D49C88 /* AudioToolbox.framework */,
-				4C03DDFF1B03269000D49C88 /* CoreAudioKit.framework */,
-				4C03DDFC1B0325F800D49C88 /* AudioUnit.framework */,
-				4C03DDFA1B0325EA00D49C88 /* CoreAudio.framework */,
 				4C3729041AFDAFDB00088528 /* FrameWorks */,
 				4C3726051AFDAE0700088528 /* ThirdParties */,
 				4C300F401AFCBEDC0003CB77 /* EmojiChat */,
@@ -1884,6 +1878,12 @@
 		4C3729041AFDAFDB00088528 /* FrameWorks */ = {
 			isa = PBXGroup;
 			children = (
+				4C03DE051B0328AA00D49C88 /* MobileCoreServices.framework */,
+				4C03DE031B03287D00D49C88 /* CFNetwork.framework */,
+				4C03DE011B03280B00D49C88 /* AudioToolbox.framework */,
+				4C03DDFF1B03269000D49C88 /* CoreAudioKit.framework */,
+				4C03DDFC1B0325F800D49C88 /* AudioUnit.framework */,
+				4C03DDFA1B0325EA00D49C88 /* CoreAudio.framework */,
 				4C5E5C6F1AFDE960008FE436 /* libicucore.dylib */,
 				4C5E5C6D1AFDE937008FE436 /* libxml2.dylib */,
 				4C5E5C6B1AFDE92F008FE436 /* libresolv.dylib */,
