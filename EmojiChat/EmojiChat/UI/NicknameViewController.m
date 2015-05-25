@@ -7,14 +7,13 @@
 //
 
 #import "NicknameViewController.h"
-#import "ApplicationManager.h"
 #import "YBUtility.h"
 #import <Parse/Parse.h>
 #import "AppConstant.h"
 
 #define TAG_NICKNAME_HUD 201404071
 
-@interface NicknameViewController () <HttpClientHandlerDelegate>
+@interface NicknameViewController ()
 
 
 @property (retain, nonatomic) IBOutlet UITextField *nicknameTextField;
@@ -39,7 +38,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    self.nickname = [ApplicationManager sharedManager].account.nick;
+    PFUser *user = [PFUser currentUser];
+    self.nickname = user[PF_USER_NICKNAME];
     self.nicknameTextField.text = self.nickname;
     [self.nicknameTextField becomeFirstResponder];
 }
@@ -55,9 +55,6 @@
     [super viewWillDisappear:animated];
     
     [self.nicknameTextField resignFirstResponder];
-	// Do any additional setup after loading the view.
-    HttpClientHandler *handler = [[ApplicationManager sharedManager] httpClientHandler];
-    [handler unregisterDelegate:self];
 }
 
 - (void)didReceiveMemoryWarning
@@ -82,7 +79,8 @@
     self.nickname = self.nicknameTextField.text;
     self.nickname = [self.nickname stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     // if no changed , go back
-    if ([self.nickname isEqual:[ApplicationManager sharedManager].account.nick]) {
+    PFUser *user = [PFUser currentUser];
+    if ([self.nickname isEqualToString:user[PF_USER_NICKNAME]]) {
         [self onBackButtonTouched:nil];
         return;
     }
@@ -100,12 +98,6 @@
     // show progress view
     [YBUtility showInfoHUDInView:self.view message:nil];
     // post nickname chage request to server
-    //HttpClientHandler *handler = [ApplicationManager sharedManager].httpClientHandler;
-    //[handler registerDelegate:self];
-    //[handler setNick:self.nickname];
-    NSString *account = [ApplicationManager sharedManager].localSettingData.lastLoginAccount;
-    NSString *password = [YBUtility getPasswordWithAccount:account];
-    PFUser *user = [PFUser logInWithUsername:account password:password];
     user[PF_USER_NICKNAME] = self.nickname;
     [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
      {
@@ -115,25 +107,13 @@
          }
          else {
              // update UI
-             [self didSetNickSuccess:@{@"nick":self.nickname}];
+             [YBUtility hideInfoHUDInView:self.view];
+             
+             if (self.saveBlock) {
+                 self.saveBlock(self.nickname);
+             }
          }
      }];
-}
-
-#pragma mark - HttpClientHandlerDelegate
-- (void)didSetNickSuccess:(NSDictionary*)userData
-{
-    [YBUtility hideInfoHUDInView:self.view];
-    [ApplicationManager sharedManager].account.nick = [userData objectForKey:@"nick"];
-    
-    if (self.saveBlock) {
-        self.saveBlock([ApplicationManager sharedManager].account.nick);
-    }
-}
-
-- (void)didSetNickFailed:(NSNumber*)errorCode message:(NSString*)errorMessage
-{
-    [YBUtility showErrorMessageInView:self.view message:errorMessage errorCode:errorCode];
 }
 
 

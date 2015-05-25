@@ -71,16 +71,12 @@ UITableViewDelegate
 {
     [super viewWillAppear:animated];
     
-//    HttpClientHandler *handler = [[ApplicationManager sharedManager] httpClientHandler];
-//    [handler registerDelegate:self];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
     // Do any additional setup after loading the view.
-//    HttpClientHandler *handler = [[ApplicationManager sharedManager] httpClientHandler];
-//    [handler unregisterDelegate:self];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -170,10 +166,11 @@ UITableViewDelegate
     [self presentViewController:nv animated:YES completion:NULL];
     
     __weak __typeof(self)weakSelf = self;
+    __weak SetPasswordViewController *weakController = controller;
     controller.successBlock = ^ {
         [weakSelf dismissViewControllerAnimated:NO completion:^{
             if (self.successBlock) {
-                self.successBlock();
+                self.successBlock(phone, weakController.md5Password);
             }
         }];
     };
@@ -201,7 +198,7 @@ UITableViewDelegate
              [[ApplicationManager sharedManager] saveAccount:phone password:password_];
              
              if (self.successBlock) {
-                 self.successBlock();
+                 self.successBlock(phone, md5Password);
              }
              //[ProgressHUD showSuccess:[NSString stringWithFormat:@"Welcome back %@!", user[PF_USER_FULLNAME]]];
              //[self dismissViewControllerAnimated:YES completion:nil];
@@ -277,19 +274,6 @@ UITableViewDelegate
 {
     // load register viewcontroller
     [self loadRegisterViewController];
-}
-
-#pragma mark - HttpClientHandlerDelegate
-- (void)didLoginSuccess:(NSNumber*)userid
-{
-    if (self.successBlock) {
-        self.successBlock();
-    }
-}
-
-- (void)didLoginFailed:(NSNumber*)errorCode message:(NSString*)errorMessage
-{
-    [YBUtility showErrorMessageInView:self.view message:errorMessage errorCode:errorCode];
 }
 
 #pragma mark Table View Data Source Methods

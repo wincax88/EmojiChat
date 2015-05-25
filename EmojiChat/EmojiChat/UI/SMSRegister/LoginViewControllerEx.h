@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^LoginSuccessBlock)(NSString *account, NSString *password);
+
 @interface LoginViewControllerEx : UIViewController
 
 @property(copy) dispatch_block_t backBlock;
-@property(copy) dispatch_block_t successBlock;
+@property(copy) LoginSuccessBlock successBlock;
 
 @end

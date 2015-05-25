@@ -21,6 +21,7 @@ typedef void(^ResetPasswordBlock)(NSString *phoneNumber);
 @property (nonatomic, retain) IBOutlet UITextField* pwdTextField2;
 
 @property (nonatomic, strong) NSString* phoneNumber;
+@property (nonatomic, strong) NSString* md5Password;
 @property (assign, readwrite) BOOL      registerMode;
 
 @end

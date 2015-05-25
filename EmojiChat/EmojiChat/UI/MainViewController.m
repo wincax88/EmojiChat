@@ -110,8 +110,7 @@
 }
 
 - (void)loadLoginViewController {
-#if (USING_SMS_REGISTER)
-    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"RegisterAndLogin" bundle:[NSBundle mainBundle]];
+    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"SMSRegister" bundle:[NSBundle mainBundle]];
     UINavigationController * nv = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewControllerEx"];
     LoginViewControllerEx *controller = [[nv childViewControllers] firstObject];
     __weak __typeof(self)weakSelf = self;
@@ -119,32 +118,17 @@
         [weakSelf dismissViewControllerAnimated:YES completion:nil];
     };
     
-    controller.successBlock = ^  {
+    controller.successBlock = ^(NSString *account, NSString *password)  {
+        [ApplicationManager sharedManager].localSettingData.lastLoginAccount = account;
+        [YBUtility savePassword:password account:account];
+        
         [weakSelf dismissViewControllerAnimated:YES completion:^{
             // update current page
-            //            [weakSelf refreshCurPage];
+            //[weakSelf refreshCurPage];
         }];
     };
     
     [self presentViewController:nv animated:YES completion:NULL];
-#else
-    
-    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"RegisterAndLogin" bundle:[NSBundle mainBundle]];
-    UINavigationController * nv = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
-    LoginViewController *controller = [[nv childViewControllers] firstObject];
-    __weak __typeof(self)weakSelf = self;
-    controller.backBlock = ^{
-        [weakSelf dismissViewControllerAnimated:YES completion:nil];
-    };
-    controller.successBlock = ^{
-        [weakSelf dismissViewControllerAnimated:YES completion:^{
-            // update current page
-            //            [weakSelf refreshCurPage];
-        }];
-    };
-    
-    [self presentViewController:nv animated:YES completion:NULL];
-#endif
 }
 
 - (void)showQuickAnswerView

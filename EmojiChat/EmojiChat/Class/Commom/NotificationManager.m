@@ -206,8 +206,13 @@ static id _sharedInstance;
 
 - (void)handle4application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
 //    [PFPush handlePush:userInfo];
-    [self parseRemoteNotification:userInfo application:application fromLaunch:NO];
-    [application setApplicationIconBadgeNumber:0];
+    if ([PFUser currentUser] != nil)
+    {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self parseRemoteNotification:userInfo application:application fromLaunch:NO];
+        });
+        [application setApplicationIconBadgeNumber:0];
+    }
 }
 
 - (void)handle4application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forRemoteNotification:(NSDictionary *)userInfo completionHandler:(void(^)())completionHandler

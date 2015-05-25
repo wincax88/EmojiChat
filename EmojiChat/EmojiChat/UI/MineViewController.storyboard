@@ -423,6 +423,7 @@
                     <navigationItem key="navigationItem" title="设置" id="5bd-Vg-EpQ">
                         <barButtonItem key="backBarButtonItem" id="vin-l6-esP"/>
                     </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="tableView" destination="G4I-MG-Z4M" id="sps-hc-hMV"/>
                     </connections>

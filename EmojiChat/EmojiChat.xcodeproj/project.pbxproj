@@ -315,6 +315,8 @@
 		4C5E5CB71AFE0E4B008FE436 /* SMSRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5E5CAA1AFE0E4B008FE436 /* SMSRegisterViewController.m */; };
 		4C5E5CB81AFE0E4B008FE436 /* VerifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5E5CAC1AFE0E4B008FE436 /* VerifyViewController.m */; };
 		4CCD576E1B0042A0000FD0B2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4CCD576D1B0042A0000FD0B2 /* Localizable.strings */; };
+		4CFC24B61B12C11D0085C8D5 /* MineViewControllerEx.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC24B51B12C11D0085C8D5 /* MineViewControllerEx.m */; };
+		4CFC24BC1B1304E40085C8D5 /* FriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CFC24BB1B1304E40085C8D5 /* FriendViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -891,6 +893,10 @@
 		4C5E5CAB1AFE0E4B008FE436 /* VerifyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerifyViewController.h; sourceTree = "<group>"; };
 		4C5E5CAC1AFE0E4B008FE436 /* VerifyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerifyViewController.m; sourceTree = "<group>"; };
 		4CCD576D1B0042A0000FD0B2 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		4CFC24B41B12C11D0085C8D5 /* MineViewControllerEx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineViewControllerEx.h; sourceTree = "<group>"; };
+		4CFC24B51B12C11D0085C8D5 /* MineViewControllerEx.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineViewControllerEx.m; sourceTree = "<group>"; };
+		4CFC24BA1B1304E40085C8D5 /* FriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendViewController.h; sourceTree = "<group>"; };
+		4CFC24BB1B1304E40085C8D5 /* FriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1860,6 +1866,7 @@
 		4C3728B81AFDAEC500088528 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				4CFC24B91B1304C20085C8D5 /* Friend */,
 				4C5E5C951AFE0E4B008FE436 /* SMSRegister */,
 				4C5E5C601AFDE2F5008FE436 /* QuickAnswer */,
 				4C5E5C5F1AFDE27C008FE436 /* Chat */,
@@ -1941,6 +1948,8 @@
 				4C3728C61AFDAEC500088528 /* ContactCell.m */,
 				4C3728BF1AFDAEC500088528 /* ButtonCell.h */,
 				4C3728C01AFDAEC500088528 /* ButtonCell.m */,
+				4CFC24B41B12C11D0085C8D5 /* MineViewControllerEx.h */,
+				4CFC24B51B12C11D0085C8D5 /* MineViewControllerEx.m */,
 			);
 			name = Mine;
 			sourceTree = "<group>";
@@ -2029,6 +2038,15 @@
 			path = SMSRegister;
 			sourceTree = "<group>";
 		};
+		4CFC24B91B1304C20085C8D5 /* Friend */ = {
+			isa = PBXGroup;
+			children = (
+				4CFC24BA1B1304E40085C8D5 /* FriendViewController.h */,
+				4CFC24BB1B1304E40085C8D5 /* FriendViewController.m */,
+			);
+			name = Friend;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2109,6 +2127,9 @@
 						CreatedOnToolsVersion = 6.3.1;
 						DevelopmentTeam = YP9GHQ52C4;
 						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
 							com.apple.Keychain = {
 								enabled = 1;
 							};
@@ -2315,6 +2336,7 @@
 				4C3727EA1AFDAE0700088528 /* ListRecord.m in Sources */,
 				4C3728141AFDAE0700088528 /* JLRemindersPermission.m in Sources */,
 				4C3727C61AFDAE0700088528 /* AFURLResponseSerialization.m in Sources */,
+				4CFC24B61B12C11D0085C8D5 /* MineViewControllerEx.m in Sources */,
 				4C3727C91AFDAE0700088528 /* ALButton.m in Sources */,
 				4C37282B1AFDAE0700088528 /* JSQMessagesViewController.m in Sources */,
 				4C3728591AFDAE0700088528 /* OALAudioTracks.m in Sources */,
@@ -2325,6 +2347,7 @@
 				4C37282D1AFDAE0700088528 /* JSQMessagesAvatarImageFactory.m in Sources */,
 				4C3728F21AFDAEC500088528 /* MainViewController.m in Sources */,
 				4C3728851AFDAE0700088528 /* UIImage+WebP.m in Sources */,
+				4CFC24BC1B1304E40085C8D5 /* FriendViewController.m in Sources */,
 				4C37284F1AFDAE0700088528 /* MD5.m in Sources */,
 				4C3728381AFDAE0700088528 /* JSQMessagesBubbleImage.m in Sources */,
 				4C3727DE1AFDAE0700088528 /* ManualDownloadManager.m in Sources */,

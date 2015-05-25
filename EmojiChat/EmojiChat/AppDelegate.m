@@ -12,6 +12,7 @@
 #import <SMS_SDK/SMS_SDK.h>
 
 #import <Parse/Parse.h>
+#import <ParseUI/ParseUI.h>
 
 #define SMS_SDK_APPKEY          @"7159ea8fc1b4"
 #define SMS_SDK_APPSECRET       @"a0d873e2498c3bdec14d932646f4f24c"
@@ -26,7 +27,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     // Enable data sharing in main app.
-    //[Parse enableDataSharingWithApplicationGroupIdentifier:@"group.com.parse.parseuidemo"];
+    [Parse enableDataSharingWithApplicationGroupIdentifier:@"group.com.leoedu.ichat"];
     // Setup Parse
     [Parse setApplicationId:@"f5Eiapb3uDqD6wODSmEYpbbpNvfpGTwjL5ePuXLh" clientKey:@"5JD23aAWSKvHhdjiRVuiPTO88QQ6TaTUjLfKoCpm"];
 
@@ -38,14 +39,17 @@
                                                                 diskPath:nil];
     [NSURLCache setSharedURLCache:sharedCache];
     
+    //---------------------------------------------------------------------------------------------------------------------------------------------
+    [PFImageView class];
+    //---------------------------------------------------------------------------------------------------------------------------------------------
+
     //
     [[ApplicationManager sharedManager] load];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-    UINavigationController *nv = [storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
-    self.mainViewController = [[nv childViewControllers] firstObject];
-    self.window.rootViewController = nv;
+    self.mainViewController = (MainViewController*)[storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
+    self.window.rootViewController = self.mainViewController;
     [self.window makeKeyAndVisible];
     
     self.window.backgroundColor = [UIColor orangeColor];
@@ -75,6 +79,12 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     // check login state
+    if ([PFUser currentUser] == nil)
+    {
+        // show login view
+        [self.mainViewController loadLoginViewController];
+    }
+/*
     if ([ApplicationManager sharedManager].account.userid.intValue <= 0) {
         BOOL canAutoLogin = NO;
         if ([ApplicationManager sharedManager].localSettingData.enableAutoLogin) {
@@ -88,7 +98,7 @@
             [self.mainViewController loadLoginViewController];
         }
     }
-    
+    */
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {

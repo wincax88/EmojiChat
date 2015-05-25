@@ -38,10 +38,10 @@
 - (void)signUpWith:(NSString*)phone password:(NSString*)password nick:(NSString*)nick
 {
     [YBUtility showInfoHUDInView:self.view message:nil];
-    NSString *md5Password = [password length] >= 32 ? password : [MD5 md5WithoutKey:password];
+    self.md5Password = [password length] >= 32 ? password : [MD5 md5WithoutKey:password];
     PFUser *user = [PFUser user];
     user.username = phone;
-    user.password = md5Password;
+    user.password = self.md5Password;
     user[PF_USER_NICKNAME] = nick;
     user[PF_USER_PHONE] = phone;
     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
@@ -67,9 +67,9 @@
 - (void)resetPassword:(NSString*)phone password:(NSString*)password
 {
     [YBUtility showInfoHUDInView:self.view message:nil];
-    NSString *md5Password = [password length] >= 32 ? password : [MD5 md5WithoutKey:password];
+    self.md5Password = [password length] >= 32 ? password : [MD5 md5WithoutKey:password];
     [PFCloud callFunctionInBackground:@"resetPassword"
-                       withParameters:@{@"phone":phone, @"password":md5Password}
+                       withParameters:@{@"phone":phone, @"password":self.md5Password}
                                 block:^(NSString *result, NSError *error) {
                                     if (!error) {
                                         [YBUtility hideInfoHUDInView:self.view];

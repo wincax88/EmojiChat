@@ -250,7 +250,7 @@
     invitee[PF_INVITE_TIME] = [NSDate date];
     [invitee saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
-            [invitee refresh];
+//            [invitee refresh];
             [self didInviteUserWithPhoneSuccess:phone];
         }
         else {
