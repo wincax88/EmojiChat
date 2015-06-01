@@ -13,6 +13,7 @@
 
 #import <Parse/Parse.h>
 #import <ParseUI/ParseUI.h>
+#import "push.h"
 
 #define SMS_SDK_APPKEY          @"7159ea8fc1b4"
 #define SMS_SDK_APPSECRET       @"a0d873e2498c3bdec14d932646f4f24c"
@@ -27,7 +28,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     // Enable data sharing in main app.
-    [Parse enableDataSharingWithApplicationGroupIdentifier:@"group.com.leoedu.ichat"];
+    [Parse enableDataSharingWithApplicationGroupIdentifier:@"group.com.iTouchLight.EmojiChat"];
     // Setup Parse
     [Parse setApplicationId:@"f5Eiapb3uDqD6wODSmEYpbbpNvfpGTwjL5ePuXLh" clientKey:@"5JD23aAWSKvHhdjiRVuiPTO88QQ6TaTUjLfKoCpm"];
 
@@ -84,21 +85,14 @@
         // show login view
         [self.mainViewController loadLoginViewController];
     }
-/*
-    if ([ApplicationManager sharedManager].account.userid.intValue <= 0) {
-        BOOL canAutoLogin = NO;
-        if ([ApplicationManager sharedManager].localSettingData.enableAutoLogin) {
-            // do auto login
-            if ([self.mainViewController autoLogin]) {
-                canAutoLogin = YES;
-            }
-        }
-        if (!canAutoLogin) {
-            // show login view
-            [self.mainViewController loadLoginViewController];
+    else {
+        ParsePushUserAssign();
+        
+        if (application.applicationIconBadgeNumber != 0) {
+            application.applicationIconBadgeNumber = 0;
+            [[PFInstallation currentInstallation] saveEventually];
         }
     }
-    */
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {

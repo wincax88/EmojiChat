@@ -19,6 +19,9 @@
 void ParsePushUserAssign(void)
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 {
+    if (![PFUser currentUser]) {
+        return;
+    }
 	PFInstallation *installation = [PFInstallation currentInstallation];
 	installation[PF_INSTALLATION_USER] = [PFUser currentUser];
 	[installation saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
@@ -28,15 +31,6 @@ void ParsePushUserAssign(void)
 			NSLog(@"ParsePushUserAssign save error.");
 		}
 	}];
-    PFUser *user = [PFUser currentUser];
-    //user[PF_USER_PUSH_CHANNEL] = installation.objectId;
-    [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
-     {
-         if (error != nil)
-         {
-             NSLog(@"!!! PF_USER_PUSH_CHANNEL save error.");
-         }
-     }];
 }
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------

@@ -64,27 +64,38 @@
     self.nickLabel.text = contact.nick;
     self.phoneLabel.text = contact.phone;
     
-    
-    if (contact.relationShip == kContactInvited) {
-        self.statusLabel.hidden = NO;
-        self.statusLabel.text = @"已邀请";
-    }
-    else if (contact.relationShip == kContactIsFriend) {
-        self.statusLabel.hidden = NO;
-        self.statusLabel.text = @"已添加";
-    }
-    else if (contact.relationShip == kContactIsInvitee) {
-        self.acceptButton.hidden = NO;
-        self.refuseButton.hidden = NO;
-    }
-    else if (contact.relationShip == kContactIsRefused) {
-        self.statusLabel.hidden = NO;
-        self.statusLabel.text = @"已拒绝";
+    if (!self.singleSelect) {
+        if (contact.relationShip == kContactInvited) {
+            self.statusLabel.hidden = NO;
+            self.statusLabel.text = @"已邀请";
+        }
+        else if (contact.relationShip == kContactIsFriend) {
+            self.statusLabel.hidden = NO;
+            self.statusLabel.text = @"已添加";
+        }
+        else if (contact.relationShip == kContactIsInvitee) {
+            self.acceptButton.hidden = NO;
+            self.refuseButton.hidden = NO;
+        }
+        else if (contact.relationShip == kContactIsRefused) {
+            self.statusLabel.hidden = NO;
+            self.statusLabel.text = @"已拒绝";
+        }
+        else {
+            self.addButton.hidden = NO;
+        }
     }
     else {
-        self.addButton.hidden = NO;
+        if (contact.relationShip == kContactIsFriend) {
+            self.selectionStyle = UITableViewCellSelectionStyleNone;
+            self.nickLabel.textColor = [UIColor lightGrayColor];
+        }
+        else {
+            self.selectionStyle = UITableViewCellSelectionStyleDefault;
+            self.nickLabel.textColor = [UIColor darkGrayColor];
+        }
     }
-    
+   
     if (self.avatarImageView) {
         [YBUtility setImageView:self.avatarImageView withURLString:contact.face placeHolder:nil];
     }

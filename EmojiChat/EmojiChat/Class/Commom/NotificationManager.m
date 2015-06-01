@@ -49,24 +49,30 @@ static id _sharedInstance;
 }
 
 #pragma mark - private
-
+/*
+aps =     {
+    alert = "peter: \Ud83c\Udf92";
+    badge = 4;
+    category = ACTIONABLE;
+    sound = "hello.wav";
+};
+senderid = 13564417734;
+*/
 - (NotificationObject*)parseRemoteUserInfo:(NSDictionary*)userInfo
 {
     NotificationObject *notification = [[NotificationObject alloc] init];
-    NSMutableDictionary *message_content = [[NSMutableDictionary alloc] initWithDictionary:[userInfo objectForKey:@"message_content"] copyItems:YES];
-    NSString *value = [message_content objectForKey:@"senderid"];
-    NSNumber *senderid = [NSNumber numberWithInteger:value.integerValue];
+    notification.senderid = [userInfo objectForKey:@"senderid"];
     NSDictionary *aps = [userInfo objectForKey:@"aps"];
-    NSString *message = [aps objectForKey:@"alert"];
-    NSString *sound = [aps objectForKey:@"sound"];
-    if (senderid.intValue > 0 && message.length > 0) {
-        notification.senderid = senderid;
-        notification.message = message;
-        notification.sound = sound;
-        notification.timestamp = [NSNumber numberWithDouble:CFAbsoluteTimeGetCurrent()];
-        [[ApplicationManager sharedManager].quickAnswerList addObject:notification];
-        [[NSNotificationCenter defaultCenter] postNotificationName:PNS_QUICK_MESSAGE object:nil userInfo:message_content];
-    }
+    notification.message = [aps objectForKey:@"alert"];
+    notification.sound = [aps objectForKey:@"sound"];
+    notification.timestamp = [NSNumber numberWithDouble:CFAbsoluteTimeGetCurrent()];
+    /*
+    [[ApplicationManager sharedManager].quickAnswerList addObject:notification];
+    
+    NSMutableDictionary *applicationState = [[NSMutableDictionary alloc] init];
+    [applicationState setObject:[NSNumber numberWithInt:[UIApplication sharedApplication].applicationState] forKey:@"applicationState"];
+    [[NSNotificationCenter defaultCenter] postNotificationName:PNS_QUICK_MESSAGE object:nil userInfo:applicationState];
+     */
     return notification;
 }
 
@@ -90,8 +96,7 @@ static id _sharedInstance;
              };
              "message_id" = 0;
              */
-            NSString *value = [message_content objectForKey:@"senderid"];
-            NSNumber *senderid = [NSNumber numberWithInteger:value.integerValue];
+            NSString *senderid = [message_content objectForKey:@"senderid"];
             NSDictionary *aps = [userInfo objectForKey:@"aps"];
             NSString *message = [aps objectForKey:@"alert"];
             NSString *sound = [aps objectForKey:@"sound"];
@@ -200,7 +205,7 @@ static id _sharedInstance;
 {
     PFInstallation *currentInstallation = [PFInstallation currentInstallation];
     [currentInstallation setDeviceTokenFromData:deviceToken];
-    currentInstallation.channels = @[@"global", currentInstallation.installationId];
+//    currentInstallation.channels = @[@"global", currentInstallation.installationId];
     [currentInstallation saveInBackground];
 }
 
@@ -225,8 +230,19 @@ static id _sharedInstance;
         
         NSLog(@"You chose action answer.");
         // send answer to partner
-        //[self sendPush:@"Hi"];
-        
+        NotificationObject *notification = [self parseRemoteUserInfo:userInfo];
+        NSString *senderId = notification.senderid;
+        PFQuery *query = [PFUser query];
+        [query whereKey:PF_USER_PHONE equalTo:senderId];
+        PFUser *sender = (PFUser*)[query getFirstObject];
+        if (sender) {
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                [self sendPush:@"😊" to:sender];
+            });
+        }
+        else {
+            NSLog(@"can not find : %@", senderId);
+        }
     }
     else {
         NSParameterAssert(false);
@@ -255,46 +271,37 @@ static id _sharedInstance;
                            @"alert" : message,
                            @"badge" : badge,
                            @"sound" : sounds,
-                           @"category" :category
+                           @"category" :category,
+                           @"senderid" : user[PF_USER_PHONE]
                            };
-//    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"phone = %@", buddy.userId];
-//    PFQuery *query = [PFQuery queryWithClassName:PF_USER_CLASS_NAME predicate:predicate];
-//    NSError *error;
-//    NSArray *foundBuddys = [query findObjects:&error];
-    if (1) {
-//        PFUser *buddy = foundBuddys.firstObject;
-        
-        //PFQuery *queryInstallation = [PFInstallation query];
-        //[queryInstallation whereKey:PF_INSTALLATION_USER equalTo:buddy];
-        //PFQuery *queryInstallation = [PFInstallation query];
-        //[queryInstallation whereKey:PF_INSTALLATION_USER matchesQuery:query];
-        
-        PFPush *push = [[PFPush alloc] init];
-        //[push setChannels:@[ buddy[PF_USER_PUSH_CHANNEL] ]];
-        //[push setQuery:queryInstallation];
-        [push setData:data];
-        if ([UIApplication sharedApplication].applicationState == UIApplicationStateActive) {
-            [push sendPushInBackgroundWithBlock:^ (BOOL succeeded, NSError *error) {
-                if (!succeeded || error) {
-                    NSLog(@"sendPushInBackgroundWithBlock error = %@", error);
-                }
-                else {
-                    NSLog(@"sendPushInBackgroundWithBlock OK");
-                }
-            }];
-        }
-        else {
-            NSError *error;
-            [push sendPush:&error];
-            if (error) {
-                NSLog(@"sendPush error = %@", error);
+    
+    
+    PFQuery *queryInstallation = [PFInstallation query];
+    [queryInstallation whereKey:PF_INSTALLATION_USER equalTo:buddy];
+    
+    PFPush *push = [[PFPush alloc] init];
+    [push setQuery:queryInstallation];
+    [push setData:data];
+    if ([UIApplication sharedApplication].applicationState == UIApplicationStateActive) {
+        [push sendPushInBackgroundWithBlock:^ (BOOL succeeded, NSError *error) {
+            if (!succeeded || error) {
+                NSLog(@"sendPushInBackgroundWithBlock error = %@", error);
             }
             else {
-                NSLog(@"sendPush OK");
+                NSLog(@"sendPushInBackgroundWithBlock OK");
             }
+        }];
+    }
+    else {
+        NSError *error;
+        [push sendPush:&error];
+        if (error) {
+            NSLog(@"sendPush error = %@", error);
+        }
+        else {
+            NSLog(@"sendPush OK");
         }
     }
-    
 }
 
 

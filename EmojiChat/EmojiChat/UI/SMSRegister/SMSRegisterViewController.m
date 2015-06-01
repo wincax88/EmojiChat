@@ -9,7 +9,7 @@
 #import "SMSRegisterViewController.h"
 #import "YBUtility.h"
 #import "ApplicationManager.h"
-#import "SetPwdViewController.h"
+//#import "SetPwdViewController.h"
 #import "MBProgressHUD.h"
 #import "VerifyViewController.h"
 #import "UIAlertView+Blocks.h"
@@ -80,14 +80,14 @@ UITableViewDelegate
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    [[ApplicationManager sharedManager].httpClientHandler registerDelegate:self];
+//    [[ApplicationManager sharedManager].httpClientHandler registerDelegate:self];
     
     [super viewWillAppear:animated];
 }
 
 
 - (void)viewWillDisappear:(BOOL)animated {
-    [[ApplicationManager sharedManager].httpClientHandler unregisterDelegate:self];
+//    [[ApplicationManager sharedManager].httpClientHandler unregisterDelegate:self];
     
     [super viewWillDisappear:animated];
 }
@@ -356,7 +356,7 @@ UITableViewDelegate
         }
     };
 }
-
+/*
 - (void)loadSetPwdViewController {
     UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"RegisterAndLogin" bundle:[NSBundle mainBundle]];
     UINavigationController *nv = [storyboard instantiateViewControllerWithIdentifier:@"SetPwdViewController"];
@@ -378,7 +378,7 @@ UITableViewDelegate
         }
     };
 }
-
+*/
 #pragma mark - private
 
 - (void)didVerifyPhoneNumberSuccess:(NSDictionary*)userData {

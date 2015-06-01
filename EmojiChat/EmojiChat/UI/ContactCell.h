@@ -28,6 +28,8 @@ typedef void (^RefuseTouchBlock) (NSString *userId);
 @property (strong, nonatomic) IBOutlet UIButton *refuseButton;
 @property (strong, nonatomic) IBOutlet UIImageView *avatarImageView;
 
+@property(assign, readwrite) BOOL singleSelect;
+
 - (IBAction)onInviteTouched:(id)sender;
 - (IBAction)onAcceptTouched:(id)sender;
 - (IBAction)onRefuseTouched:(id)sender;

@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void (^ContactSelectBlock) (NSString *phone);
+
 @interface ContactViewController : UIViewController
+
+@property(assign, readwrite) BOOL singleSelect;
+@property(copy) ContactSelectBlock contactSelectBlock;
 
 @end

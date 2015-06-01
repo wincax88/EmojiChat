@@ -10,7 +10,7 @@
 #import "Assistant.h"
 
 @implementation ConfigureObject
-
+/*
 - (id)init
 {
     self = [super init];
@@ -125,5 +125,5 @@
     
     return configure;
 }
-
+*/
 @end

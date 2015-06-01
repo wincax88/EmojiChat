@@ -66,7 +66,7 @@
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
-    [[ApplicationManager sharedManager].httpClientHandler unregisterDelegate:self];
+    //[[ApplicationManager sharedManager].httpClientHandler unregisterDelegate:self];
     //    [iVersion sharedInstance].delegate = nil;
     //    [iRate sharedInstance].delegate = nil;
     
@@ -184,12 +184,12 @@
                 person.relationShip = kContactInvited;
             }
             if (person.relationShip <= 0) {
-                NSArray *filter = [[ApplicationManager sharedManager].friendList filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"phone == %@", person.phone]];
+                NSArray *filter = [[ApplicationManager sharedManager].friendList filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"buddy.phone == %@", person.phone]];
                 if (filter.count > 0) {
-                    ChatBuddy *buddy = filter.firstObject;
+                    FriendObject *friend = filter.firstObject;
                     person.relationShip = kContactIsFriend;
-                    person.userid = [NSNumber numberWithInteger:buddy.userId.integerValue];
-                    person.face = buddy.avatarUrl;
+                    person.userid = friend.buddy[PF_USER_PHONE];
+                    //person.face = friend.buddy.avatarUrl;
                 }
             }
             [chatBuddyList addObject:person];
@@ -319,6 +319,8 @@
     
     ContactCell *cell = (ContactCell*)[tableView dequeueReusableCellWithIdentifier:@"ContactCell"];
     
+    cell.singleSelect = self.singleSelect;
+    
     AccountObject *person = sortedBuddyList[indexPath.section][indexPath.row];
     
     [cell setContact:person];
@@ -360,7 +362,17 @@
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    ChatBuddy *buddy = sortedBuddyList[indexPath.section][indexPath.row];
+    if (self.singleSelect) {
+        AccountObject *person = sortedBuddyList[indexPath.section][indexPath.row];
+        if (person.relationShip != kContactIsFriend) {
+            if (self.contactSelectBlock) {
+                self.contactSelectBlock(person.phone);
+                
+            }
+        }
+    }
+    
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
     
 //    [self loadMessageDetailViewController:buddy placeholder:[NSString stringWithFormat:@"发送信息给%@",buddy.nickName] hideInput:NO];
 }

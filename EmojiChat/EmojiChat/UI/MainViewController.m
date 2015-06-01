@@ -27,6 +27,7 @@
 #import <Parse/Parse.h>
 #import "push.h"
 #import "AppConstant.h"
+#import "ParseConfigure.h"
 
 #define USING_SMS_REGISTER 1
 
@@ -178,13 +179,10 @@
         });
     }
 }
+
 - (void)getConfigure
 {
-    if ([ApplicationManager sharedManager].configureObject.update.boolValue) {
-        return;
-    }
-    [[ApplicationManager sharedManager].httpClientHandler registerDelegate:self];
-    [[ApplicationManager sharedManager].httpClientHandler getConfigure];
+    getConfigure([ApplicationManager sharedManager].configureObject);
 }
 
 - (void)getInviteUser
@@ -214,21 +212,26 @@
     PFQuery *query = [PFQuery queryWithClassName:PF_FRIEND_CLASS_NAME];
     [query whereKey:PF_FRIEND_MSATER_OBJECT equalTo:curUser];
     [query includeKey:PF_FRIEND_BUDDY_OBJECT];
+    //[query includeKey:PF_FRIEND_BUDDY_INDEX];
+    //[query includeKey:PF_FRIEND_BUDDY_NICKNAME];
     [query setLimit:1000];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
     {
         if (!error) {
             //
             [[ApplicationManager sharedManager].friendList removeAllObjects];
-            for (PFObject *relation in objects) {
-                PFUser *friendUser = relation[PF_FRIEND_BUDDY_OBJECT];
+            for (PFObject *object in objects) {
+                FriendObject *friend = [[FriendObject alloc] init];
+                friend.buddy = object[PF_FRIEND_BUDDY_OBJECT];
+                friend.nickName = object[PF_FRIEND_BUDDY_NICKNAME];
+                friend.index = object[PF_FRIEND_BUDDY_INDEX];
                 /*
                 ChatBuddy *buddy = [[ChatBuddy alloc] init];
                 buddy.userId = friendUser[PF_USER_PHONE];
                 buddy.nickName = friendUser[PF_USER_NICKNAME];;
                 // buddy.avatarUrl = [item objectForKey:@"face"];
                 buddy.phoneNumber = friendUser[PF_USER_PHONE];*/
-                [[ApplicationManager sharedManager].friendList addObject:friendUser];
+                [[ApplicationManager sharedManager].friendList addObject:friend];
             }
             
             // refresh ui
@@ -336,9 +339,9 @@
     [self getConfirmList];
     
     // upload token
-    NSString *bPushUserId = [ApplicationManager sharedManager].localSettingData.bPushUserId;
-    NSString *bPushChannelId = [ApplicationManager sharedManager].localSettingData.bPushChannelId;
-    [[ApplicationManager sharedManager].httpClientHandler uploadPushToken:bPushUserId channelid:bPushChannelId];
+    //NSString *bPushUserId = [ApplicationManager sharedManager].localSettingData.bPushUserId;
+    //NSString *bPushChannelId = [ApplicationManager sharedManager].localSettingData.bPushChannelId;
+    //[[ApplicationManager sharedManager].httpClientHandler uploadPushToken:bPushUserId channelid:bPushChannelId];
     
     // if nick name is empty, add badge
 //    if ([ApplicationManager sharedManager].account.nick.length <= 0) {
@@ -391,11 +394,11 @@
 - (void)didGetConfigureSuccess
 {
     // if chat server not login
-    if ([[ApplicationManager sharedManager].configureObject.chat_xmpp length] > 0 &&
-        [ApplicationManager sharedManager].account.userid.intValue > 0) {
+    //if ([[ApplicationManager sharedManager].configureObject.chat_xmpp length] > 0 &&
+    //    [ApplicationManager sharedManager].account.userid.intValue > 0) {
         // login to chat server and fetch message
 //        [self loginChatServer:[ApplicationManager sharedManager].configureObject.chat_xmpp port:[ApplicationManager sharedManager].configureObject.chat_xmpp_port];
-    }
+    //}
     
 }
 

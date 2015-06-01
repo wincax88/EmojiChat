@@ -13,6 +13,7 @@
 #import "AccountObject.h"
 #import "ButtonCell.h"
 #import "NSString+ContainString.h"
+#import "AppConstant.h"
 
 @interface QuickAnswerCell()
 <
@@ -40,11 +41,11 @@ UITableViewDelegate
 - (void)setNotification:(NotificationObject*)notification
 {
     NSParameterAssert(notification);
-    NSArray *filter = [[ApplicationManager sharedManager].friendList filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"phone == %@", notification.senderid.stringValue]];
+    NSArray *filter = [[ApplicationManager sharedManager].friendList filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"buddy.phone == %@", notification.senderid]];
     if (filter.count > 0) {
-        ChatBuddy *person = [filter firstObject];
-        [YBUtility setImageView:self.avatarImageView withURLString:person.avatarUrl placeHolder:nil];
-        self.nickLabel.text = person.nickName;
+        FriendObject *friend = [filter firstObject];
+//        [YBUtility setImageView:self.avatarImageView withURLString:friend.buddy[PF_USER_PICTURE] placeHolder:nil];
+        self.nickLabel.text = friend.nickName;
     }
     NSString *message2 = notification.message;
     NSRange range = [message2 rangeOfString:@" ："];

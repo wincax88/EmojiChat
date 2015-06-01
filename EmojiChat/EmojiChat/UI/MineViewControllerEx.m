@@ -11,7 +11,7 @@
 #import "ApplicationManager.h"
 #import "YBUtility.h"
 #import "GKImagePicker.h"
-#import "ManualUplaodManager.h"
+//#import "ManualUplaodManager.h"
 #import "MD5.h"
 #import "AppDelegate.h"
 #import "MineInfoCell.h"
@@ -69,13 +69,15 @@ GKImagePickerDelegate
         identifierArray = @[@"NickCell", @"BuddyCell", /* @"NewChatCell",*/ @"SettingCell"];
     }
     
-    // request confirm list
-    [self getConfirmList];
-    [self getInviteUser];
-    
-    [self refresh];
-    
-    [self checkNotification];
+    if ([PFUser currentUser]) {
+        // request confirm list
+        [self getConfirmList];
+        [self getInviteUser];
+        
+        [self refresh];
+        
+        [self checkNotification];
+    }
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -158,9 +160,12 @@ GKImagePickerDelegate
          if (!error) {
              //
              [[ApplicationManager sharedManager].friendList removeAllObjects];
-             for (PFObject *relation in objects) {
-                 PFUser *friendUser = relation[PF_FRIEND_BUDDY_OBJECT];
-                 [[ApplicationManager sharedManager].friendList addObject:friendUser];
+             for (PFObject *object in objects) {
+                 FriendObject *friend = [[FriendObject alloc] init];
+                 friend.buddy = object[PF_FRIEND_BUDDY_OBJECT];
+                 friend.nickName = object[PF_FRIEND_BUDDY_NICKNAME];
+                 friend.index = object[PF_FRIEND_BUDDY_INDEX];
+                 [[ApplicationManager sharedManager].friendList addObject:friend];
              }
              
          } else {

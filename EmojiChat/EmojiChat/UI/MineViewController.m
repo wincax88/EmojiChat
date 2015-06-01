@@ -11,7 +11,7 @@
 #import "ApplicationManager.h"
 #import "YBUtility.h"
 #import "GKImagePicker.h"
-#import "ManualUplaodManager.h"
+//#import "ManualUplaodManager.h"
 #import "MD5.h"
 #import "AppDelegate.h"
 #import "MineInfoCell.h"
@@ -20,14 +20,15 @@
 #import "ContactViewController.h"
 #import <Parse/Parse.h>
 #import "AppConstant.h"
+#import "push.h"
 
 
 @interface MineViewController ()
 <
 UITableViewDataSource,
 UITableViewDelegate,
-GKImagePickerDelegate,
-ManualUplaodManagerDelegate
+GKImagePickerDelegate
+//ManualUplaodManagerDelegate
 >
 {
     NSArray *identifierArray;
@@ -82,8 +83,8 @@ ManualUplaodManagerDelegate
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
-    [[ApplicationManager sharedManager].httpClientHandler unregisterDelegate:self];
-    [[ApplicationManager sharedManager].manualUplaodManager unregisterDelegate:self];
+//    [[ApplicationManager sharedManager].httpClientHandler unregisterDelegate:self];
+//    [[ApplicationManager sharedManager].manualUplaodManager unregisterDelegate:self];
     [super viewDidDisappear:animated];
 }
 
@@ -196,6 +197,8 @@ ManualUplaodManagerDelegate
     PFQuery *query = [PFQuery queryWithClassName:PF_FRIEND_CLASS_NAME];
     [query whereKey:PF_FRIEND_MSATER_OBJECT equalTo:curUser];
     [query includeKey:PF_FRIEND_BUDDY_OBJECT];
+    //[query includeKey:PF_FRIEND_BUDDY_INDEX];
+    //[query includeKey:PF_FRIEND_BUDDY_NICKNAME];
     [query setLimit:1000];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
      {
@@ -240,8 +243,8 @@ ManualUplaodManagerDelegate
                 confirm.relationShip = kContactIsInvitee;
                 [[ApplicationManager sharedManager].confirmList addObject:confirm];
             }
-            
-            [self didGetConfirmListSuccess:nil];
+            [self updateUI];
+            //[self didGetConfirmListSuccess:nil];
             
         } else {
             // Log details of the failure
@@ -256,7 +259,7 @@ ManualUplaodManagerDelegate
         //PFUser *user = [PFUser currentUser];
         //AccountObject *account = [ApplicationManager sharedManager].account;
         //account.face = user[PF_USER_THUMBNAIL];
-        [self didGetUserInfoSuccess];
+        [self updateUI];
     }
     else {
         NSString *account = [ApplicationManager sharedManager].localSettingData.lastLoginAccount;
@@ -325,6 +328,9 @@ ManualUplaodManagerDelegate
         [weakSelf.navigationController popViewControllerAnimated:YES];
     };
     controller.logoutBlock = ^{
+        
+        ParsePushUserResign();
+        
         [weakSelf.navigationController popViewControllerAnimated:NO];
         
         [XMainViewController loadLoginViewController];
@@ -513,7 +519,7 @@ ManualUplaodManagerDelegate
 
 
 # pragma mark - ManualUplaodManagerDelegate
-
+/*
 - (void)didManualUploadSuccess:(NSDictionary*)userData
 {
     if (![imageKey isEqual:[userData objectForKey:@"imageKey"]]) {
@@ -560,10 +566,10 @@ ManualUplaodManagerDelegate
 - (void)didGetConfirmListSuccess:(NSDictionary*)userData
 {
     if ([ApplicationManager sharedManager].confirmList.count > 0) {
-        identifierArray = @[@"NickCell", @"ConfirmCell", @"BuddyCell", /* @"NewChatCell",*/ @"SettingCell"];
+        identifierArray = @[@"NickCell", @"ConfirmCell", @"BuddyCell",  @"SettingCell"];
     }
     else {
-        identifierArray = @[@"NickCell", @"BuddyCell", /* @"NewChatCell",*/ @"SettingCell"];
+        identifierArray = @[@"NickCell", @"BuddyCell",  @"SettingCell"];
     }
     [self.tableView reloadData];
 }
@@ -571,6 +577,6 @@ ManualUplaodManagerDelegate
 - (void)didGetConfirmListFailed:(NSNumber*)errorCode message:(NSString*)errorMessage
 {
     [YBUtility showErrorMessageInView:self.view message:errorMessage errorCode:errorCode];
-}
+}*/
 
 @end

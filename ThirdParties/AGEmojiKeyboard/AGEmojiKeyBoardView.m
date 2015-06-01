@@ -19,7 +19,7 @@ static NSString *const segmentRecentName = @"Recent";
 NSString *const RecentUsedEmojiCharactersKey = @"RecentUsedEmojiCharactersKey";
 NSString *const RecentUsedEmojiCategoryKey = @"RecentUsedEmojiCategoryKey";
 
-#define AGEmojiKeyBoardTinColor  ([UIColor darkGrayColor])
+#define AGEmojiKeyBoardTinColor  ([UIColor colorWithWhite:0.5f alpha:1.0f])
 
 @interface AGEmojiKeyboardView () <UIScrollViewDelegate, AGEmojiPageViewDelegate>
 
@@ -136,6 +136,8 @@ NSString *const RecentUsedEmojiCategoryKey = @"RecentUsedEmojiCategoryKey";
                                             CGRectGetHeight(self.segmentsBar.bounds));
         self.segmentsBar.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         self.segmentsBar.tintColor = AGEmojiKeyBoardTinColor;
+        //self.segmentsBar.backgroundColor = [UIColor blackColor];
+        //self.segmentsBar.segmentedControlStyle = UISegmentedControlStyleBar;
         
         [self.segmentsBar addTarget:self
                              action:@selector(categoryChangedViaSegmentsBar:)

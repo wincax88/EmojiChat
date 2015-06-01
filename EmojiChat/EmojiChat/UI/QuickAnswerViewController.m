@@ -136,8 +136,8 @@ UITextViewDelegate
     if (audio.length > 0) {
         audioFile = audio;
     }
-    [[ApplicationManager sharedManager].httpClientHandler registerDelegate:self];
-    [[ApplicationManager sharedManager].httpClientHandler sendMessage:message to:buddy audio:audioFile time:timestamp];
+//    [[ApplicationManager sharedManager].httpClientHandler registerDelegate:self];
+//    [[ApplicationManager sharedManager].httpClientHandler sendMessage:message to:buddy audio:audioFile time:timestamp];
 }
 
 #pragma mark - puclic
@@ -176,12 +176,13 @@ UITextViewDelegate
         NSIndexPath *indexPath = [[self.collectionView indexPathsForVisibleItems] firstObject];
         if (indexPath) {
             NotificationObject *notification = [[ApplicationManager sharedManager].quickAnswerList objectAtIndex:indexPath.row];
-            [self sendMessage:self.textView.text to:notification.senderid.stringValue audio:nil time:notification.timestamp];
+            [self sendMessage:self.textView.text to:notification.senderid audio:nil time:notification.timestamp];
         }
     }
 }
 
 #pragma mark - Http
+/*
 - (void)didSendMessageSuccess:(NSString*)senders time:(NSNumber*)timestamp
 {
     [[ApplicationManager sharedManager].httpClientHandler unregisterDelegate:self];
@@ -204,7 +205,7 @@ UITextViewDelegate
     [[ApplicationManager sharedManager].httpClientHandler unregisterDelegate:self];
     [YBUtility showErrorMessageInView:self.view message:errorMessage errorCode:errorCode];
 }
-
+*/
 #pragma mark - UICollectionViewDataSource
 #pragma mark -
 

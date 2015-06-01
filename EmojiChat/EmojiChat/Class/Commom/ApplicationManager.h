@@ -9,15 +9,16 @@
 #import <Foundation/Foundation.h>
 #import "YBAudioManager.h"
 #import "LocalSettingData.h"
-#import "HttpClientHandler.h"
-#import "ManualDownloadManager.h"
-#import "ManualUplaodManager.h"
+//#import "HttpClientHandler.h"
+//#import "ManualDownloadManager.h"
+//#import "ManualUplaodManager.h"
 #import "TimerManager.h"
 #import "NotificationManager.h"
 #import "ConfigureObject.h"
 #import "ChatBuddy.h"
 //#import "XmppManager4Chat.h"
 #import "AccountObject.h"
+#import "FriendObject.h"
 
 @class PFUser;
 
@@ -33,11 +34,11 @@
 
 #pragma mark - networking
 // http handler
-@property(nonatomic, retain) HttpClientHandler      *httpClientHandler;
+//@property(nonatomic, retain) HttpClientHandler      *httpClientHandler;
 // manual download manager
-@property(nonatomic, retain) ManualDownloadManager  *manualDownloadManager;
+//@property(nonatomic, retain) ManualDownloadManager  *manualDownloadManager;
 // manual upload manager
-@property(nonatomic, retain) ManualUplaodManager    *manualUplaodManager;
+//@property(nonatomic, retain) ManualUplaodManager    *manualUplaodManager;
 // XmppManager for chat
 //@property(nonatomic, retain) XmppManager4Chat       *xmppManager4Chat;
 // NotificationManager

@@ -45,7 +45,7 @@
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
-    [[ApplicationManager sharedManager].httpClientHandler unregisterDelegate:self];
+//    [[ApplicationManager sharedManager].httpClientHandler unregisterDelegate:self];
 //    [iVersion sharedInstance].delegate = nil;
 //    [iRate sharedInstance].delegate = nil;
     

@@ -16,6 +16,32 @@
 		4C0600711B0DDD95000A0869 /* AGEmojiKeyBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C06006D1B0DDD95000A0869 /* AGEmojiKeyBoardView.m */; };
 		4C0600721B0DDD95000A0869 /* AGEmojiPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C06006F1B0DDD95000A0869 /* AGEmojiPageView.m */; };
 		4C0600731B0DDD95000A0869 /* EmojisList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C0600701B0DDD95000A0869 /* EmojisList.plist */; };
+		4C9904061B1ABAD6008D011A /* EmojiKeyBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9904051B1ABAD6008D011A /* EmojiKeyBoardViewController.m */; };
+		4C9904081B1ABAF9008D011A /* EmojiKeyBoardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C9904071B1ABAF9008D011A /* EmojiKeyBoardViewController.xib */; };
+		4C9904211B1AF9E5008D011A /* ic_emoji_nature_light_activated.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C9904091B1AF9E5008D011A /* ic_emoji_nature_light_activated.png */; };
+		4C9904221B1AF9E5008D011A /* ic_emoji_nature_light_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C99040A1B1AF9E5008D011A /* ic_emoji_nature_light_normal.png */; };
+		4C9904231B1AF9E5008D011A /* ic_emoji_nature_light_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C99040B1B1AF9E5008D011A /* ic_emoji_nature_light_normal@2x.png */; };
+		4C9904241B1AF9E5008D011A /* ic_emoji_nature_light@2x_activated.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C99040C1B1AF9E5008D011A /* ic_emoji_nature_light@2x_activated.png */; };
+		4C9904251B1AF9E5008D011A /* ic_emoji_objects_light_activated.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C99040D1B1AF9E5008D011A /* ic_emoji_objects_light_activated.png */; };
+		4C9904261B1AF9E5008D011A /* ic_emoji_objects_light_activated@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C99040E1B1AF9E5008D011A /* ic_emoji_objects_light_activated@2x.png */; };
+		4C9904271B1AF9E5008D011A /* ic_emoji_objects_light_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C99040F1B1AF9E5008D011A /* ic_emoji_objects_light_normal.png */; };
+		4C9904281B1AF9E5008D011A /* ic_emoji_objects_light_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C9904101B1AF9E5008D011A /* ic_emoji_objects_light_normal@2x.png */; };
+		4C9904291B1AF9E5008D011A /* ic_emoji_people_light_activated.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C9904111B1AF9E5008D011A /* ic_emoji_people_light_activated.png */; };
+		4C99042A1B1AF9E5008D011A /* ic_emoji_people_light_activated@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C9904121B1AF9E5008D011A /* ic_emoji_people_light_activated@2x.png */; };
+		4C99042B1B1AF9E5008D011A /* ic_emoji_people_light_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C9904131B1AF9E5008D011A /* ic_emoji_people_light_normal.png */; };
+		4C99042C1B1AF9E5008D011A /* ic_emoji_people_light_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C9904141B1AF9E5008D011A /* ic_emoji_people_light_normal@2x.png */; };
+		4C99042D1B1AF9E5008D011A /* ic_emoji_places_light_activated.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C9904151B1AF9E5008D011A /* ic_emoji_places_light_activated.png */; };
+		4C99042E1B1AF9E5008D011A /* ic_emoji_places_light_activated@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C9904161B1AF9E5008D011A /* ic_emoji_places_light_activated@2x.png */; };
+		4C99042F1B1AF9E5008D011A /* ic_emoji_places_light_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C9904171B1AF9E5008D011A /* ic_emoji_places_light_normal.png */; };
+		4C9904301B1AF9E5008D011A /* ic_emoji_places_light_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C9904181B1AF9E5008D011A /* ic_emoji_places_light_normal@2x.png */; };
+		4C9904311B1AF9E5008D011A /* ic_emoji_recent_light_activated.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C9904191B1AF9E5008D011A /* ic_emoji_recent_light_activated.png */; };
+		4C9904321B1AF9E5008D011A /* ic_emoji_recent_light_activated@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C99041A1B1AF9E5008D011A /* ic_emoji_recent_light_activated@2x.png */; };
+		4C9904331B1AF9E5008D011A /* ic_emoji_recent_light_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C99041B1B1AF9E5008D011A /* ic_emoji_recent_light_normal.png */; };
+		4C9904341B1AF9E5008D011A /* ic_emoji_recent_light_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C99041C1B1AF9E5008D011A /* ic_emoji_recent_light_normal@2x.png */; };
+		4C9904351B1AF9E5008D011A /* ic_emoji_symbols_light_activated.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C99041D1B1AF9E5008D011A /* ic_emoji_symbols_light_activated.png */; };
+		4C9904361B1AF9E5008D011A /* ic_emoji_symbols_light_activated@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C99041E1B1AF9E5008D011A /* ic_emoji_symbols_light_activated@2x.png */; };
+		4C9904371B1AF9E5008D011A /* ic_emoji_symbols_light_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C99041F1B1AF9E5008D011A /* ic_emoji_symbols_light_normal.png */; };
+		4C9904381B1AF9E5008D011A /* ic_emoji_symbols_light_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C9904201B1AF9E5008D011A /* ic_emoji_symbols_light_normal@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +62,33 @@
 		4C06006E1B0DDD95000A0869 /* AGEmojiPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGEmojiPageView.h; sourceTree = "<group>"; };
 		4C06006F1B0DDD95000A0869 /* AGEmojiPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGEmojiPageView.m; sourceTree = "<group>"; };
 		4C0600701B0DDD95000A0869 /* EmojisList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = EmojisList.plist; sourceTree = "<group>"; };
+		4C9904041B1ABAD6008D011A /* EmojiKeyBoardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmojiKeyBoardViewController.h; sourceTree = "<group>"; };
+		4C9904051B1ABAD6008D011A /* EmojiKeyBoardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmojiKeyBoardViewController.m; sourceTree = "<group>"; };
+		4C9904071B1ABAF9008D011A /* EmojiKeyBoardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmojiKeyBoardViewController.xib; sourceTree = "<group>"; };
+		4C9904091B1AF9E5008D011A /* ic_emoji_nature_light_activated.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_emoji_nature_light_activated.png; sourceTree = "<group>"; };
+		4C99040A1B1AF9E5008D011A /* ic_emoji_nature_light_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_emoji_nature_light_normal.png; sourceTree = "<group>"; };
+		4C99040B1B1AF9E5008D011A /* ic_emoji_nature_light_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_emoji_nature_light_normal@2x.png"; sourceTree = "<group>"; };
+		4C99040C1B1AF9E5008D011A /* ic_emoji_nature_light@2x_activated.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_emoji_nature_light@2x_activated.png"; sourceTree = "<group>"; };
+		4C99040D1B1AF9E5008D011A /* ic_emoji_objects_light_activated.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_emoji_objects_light_activated.png; sourceTree = "<group>"; };
+		4C99040E1B1AF9E5008D011A /* ic_emoji_objects_light_activated@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_emoji_objects_light_activated@2x.png"; sourceTree = "<group>"; };
+		4C99040F1B1AF9E5008D011A /* ic_emoji_objects_light_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_emoji_objects_light_normal.png; sourceTree = "<group>"; };
+		4C9904101B1AF9E5008D011A /* ic_emoji_objects_light_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_emoji_objects_light_normal@2x.png"; sourceTree = "<group>"; };
+		4C9904111B1AF9E5008D011A /* ic_emoji_people_light_activated.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_emoji_people_light_activated.png; sourceTree = "<group>"; };
+		4C9904121B1AF9E5008D011A /* ic_emoji_people_light_activated@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_emoji_people_light_activated@2x.png"; sourceTree = "<group>"; };
+		4C9904131B1AF9E5008D011A /* ic_emoji_people_light_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_emoji_people_light_normal.png; sourceTree = "<group>"; };
+		4C9904141B1AF9E5008D011A /* ic_emoji_people_light_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_emoji_people_light_normal@2x.png"; sourceTree = "<group>"; };
+		4C9904151B1AF9E5008D011A /* ic_emoji_places_light_activated.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_emoji_places_light_activated.png; sourceTree = "<group>"; };
+		4C9904161B1AF9E5008D011A /* ic_emoji_places_light_activated@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_emoji_places_light_activated@2x.png"; sourceTree = "<group>"; };
+		4C9904171B1AF9E5008D011A /* ic_emoji_places_light_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_emoji_places_light_normal.png; sourceTree = "<group>"; };
+		4C9904181B1AF9E5008D011A /* ic_emoji_places_light_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_emoji_places_light_normal@2x.png"; sourceTree = "<group>"; };
+		4C9904191B1AF9E5008D011A /* ic_emoji_recent_light_activated.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_emoji_recent_light_activated.png; sourceTree = "<group>"; };
+		4C99041A1B1AF9E5008D011A /* ic_emoji_recent_light_activated@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_emoji_recent_light_activated@2x.png"; sourceTree = "<group>"; };
+		4C99041B1B1AF9E5008D011A /* ic_emoji_recent_light_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_emoji_recent_light_normal.png; sourceTree = "<group>"; };
+		4C99041C1B1AF9E5008D011A /* ic_emoji_recent_light_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_emoji_recent_light_normal@2x.png"; sourceTree = "<group>"; };
+		4C99041D1B1AF9E5008D011A /* ic_emoji_symbols_light_activated.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_emoji_symbols_light_activated.png; sourceTree = "<group>"; };
+		4C99041E1B1AF9E5008D011A /* ic_emoji_symbols_light_activated@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_emoji_symbols_light_activated@2x.png"; sourceTree = "<group>"; };
+		4C99041F1B1AF9E5008D011A /* ic_emoji_symbols_light_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_emoji_symbols_light_normal.png; sourceTree = "<group>"; };
+		4C9904201B1AF9E5008D011A /* ic_emoji_symbols_light_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_emoji_symbols_light_normal@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +169,33 @@
 				4C06006E1B0DDD95000A0869 /* AGEmojiPageView.h */,
 				4C06006F1B0DDD95000A0869 /* AGEmojiPageView.m */,
 				4C0600701B0DDD95000A0869 /* EmojisList.plist */,
+				4C9904041B1ABAD6008D011A /* EmojiKeyBoardViewController.h */,
+				4C9904051B1ABAD6008D011A /* EmojiKeyBoardViewController.m */,
+				4C9904071B1ABAF9008D011A /* EmojiKeyBoardViewController.xib */,
+				4C9904091B1AF9E5008D011A /* ic_emoji_nature_light_activated.png */,
+				4C99040A1B1AF9E5008D011A /* ic_emoji_nature_light_normal.png */,
+				4C99040B1B1AF9E5008D011A /* ic_emoji_nature_light_normal@2x.png */,
+				4C99040C1B1AF9E5008D011A /* ic_emoji_nature_light@2x_activated.png */,
+				4C99040D1B1AF9E5008D011A /* ic_emoji_objects_light_activated.png */,
+				4C99040E1B1AF9E5008D011A /* ic_emoji_objects_light_activated@2x.png */,
+				4C99040F1B1AF9E5008D011A /* ic_emoji_objects_light_normal.png */,
+				4C9904101B1AF9E5008D011A /* ic_emoji_objects_light_normal@2x.png */,
+				4C9904111B1AF9E5008D011A /* ic_emoji_people_light_activated.png */,
+				4C9904121B1AF9E5008D011A /* ic_emoji_people_light_activated@2x.png */,
+				4C9904131B1AF9E5008D011A /* ic_emoji_people_light_normal.png */,
+				4C9904141B1AF9E5008D011A /* ic_emoji_people_light_normal@2x.png */,
+				4C9904151B1AF9E5008D011A /* ic_emoji_places_light_activated.png */,
+				4C9904161B1AF9E5008D011A /* ic_emoji_places_light_activated@2x.png */,
+				4C9904171B1AF9E5008D011A /* ic_emoji_places_light_normal.png */,
+				4C9904181B1AF9E5008D011A /* ic_emoji_places_light_normal@2x.png */,
+				4C9904191B1AF9E5008D011A /* ic_emoji_recent_light_activated.png */,
+				4C99041A1B1AF9E5008D011A /* ic_emoji_recent_light_activated@2x.png */,
+				4C99041B1B1AF9E5008D011A /* ic_emoji_recent_light_normal.png */,
+				4C99041C1B1AF9E5008D011A /* ic_emoji_recent_light_normal@2x.png */,
+				4C99041D1B1AF9E5008D011A /* ic_emoji_symbols_light_activated.png */,
+				4C99041E1B1AF9E5008D011A /* ic_emoji_symbols_light_activated@2x.png */,
+				4C99041F1B1AF9E5008D011A /* ic_emoji_symbols_light_normal.png */,
+				4C9904201B1AF9E5008D011A /* ic_emoji_symbols_light_normal@2x.png */,
 			);
 			name = AGEmojiKeyboard;
 			path = ../ThirdParties/AGEmojiKeyboard;
@@ -178,9 +258,34 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C99042F1B1AF9E5008D011A /* ic_emoji_places_light_normal.png in Resources */,
+				4C9904301B1AF9E5008D011A /* ic_emoji_places_light_normal@2x.png in Resources */,
+				4C9904311B1AF9E5008D011A /* ic_emoji_recent_light_activated.png in Resources */,
+				4C9904081B1ABAF9008D011A /* EmojiKeyBoardViewController.xib in Resources */,
 				4C0600511B0DDD53000A0869 /* Main.storyboard in Resources */,
+				4C9904251B1AF9E5008D011A /* ic_emoji_objects_light_activated.png in Resources */,
+				4C9904381B1AF9E5008D011A /* ic_emoji_symbols_light_normal@2x.png in Resources */,
+				4C9904211B1AF9E5008D011A /* ic_emoji_nature_light_activated.png in Resources */,
+				4C9904241B1AF9E5008D011A /* ic_emoji_nature_light@2x_activated.png in Resources */,
+				4C99042E1B1AF9E5008D011A /* ic_emoji_places_light_activated@2x.png in Resources */,
+				4C9904271B1AF9E5008D011A /* ic_emoji_objects_light_normal.png in Resources */,
+				4C9904221B1AF9E5008D011A /* ic_emoji_nature_light_normal.png in Resources */,
+				4C99042C1B1AF9E5008D011A /* ic_emoji_people_light_normal@2x.png in Resources */,
+				4C9904261B1AF9E5008D011A /* ic_emoji_objects_light_activated@2x.png in Resources */,
+				4C9904231B1AF9E5008D011A /* ic_emoji_nature_light_normal@2x.png in Resources */,
 				4C0600731B0DDD95000A0869 /* EmojisList.plist in Resources */,
+				4C99042B1B1AF9E5008D011A /* ic_emoji_people_light_normal.png in Resources */,
+				4C9904281B1AF9E5008D011A /* ic_emoji_objects_light_normal@2x.png in Resources */,
+				4C99042A1B1AF9E5008D011A /* ic_emoji_people_light_activated@2x.png in Resources */,
+				4C9904371B1AF9E5008D011A /* ic_emoji_symbols_light_normal.png in Resources */,
+				4C9904331B1AF9E5008D011A /* ic_emoji_recent_light_normal.png in Resources */,
 				4C0600561B0DDD53000A0869 /* LaunchScreen.xib in Resources */,
+				4C9904321B1AF9E5008D011A /* ic_emoji_recent_light_activated@2x.png in Resources */,
+				4C9904351B1AF9E5008D011A /* ic_emoji_symbols_light_activated.png in Resources */,
+				4C9904341B1AF9E5008D011A /* ic_emoji_recent_light_normal@2x.png in Resources */,
+				4C9904361B1AF9E5008D011A /* ic_emoji_symbols_light_activated@2x.png in Resources */,
+				4C99042D1B1AF9E5008D011A /* ic_emoji_places_light_activated.png in Resources */,
+				4C9904291B1AF9E5008D011A /* ic_emoji_people_light_activated.png in Resources */,
 				4C0600531B0DDD53000A0869 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -196,6 +301,7 @@
 				4C0600711B0DDD95000A0869 /* AGEmojiKeyBoardView.m in Sources */,
 				4C06004E1B0DDD53000A0869 /* ViewController.m in Sources */,
 				4C06004B1B0DDD53000A0869 /* AppDelegate.m in Sources */,
+				4C9904061B1ABAD6008D011A /* EmojiKeyBoardViewController.m in Sources */,
 				4C0600481B0DDD53000A0869 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,6 +447,7 @@
 				4C0600671B0DDD54000A0869 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

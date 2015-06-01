@@ -8,7 +8,7 @@
 
 #import "ApplicationManager.h"
 #import "YBUtility.h"
-#import "HttpClient.h"
+//#import "HttpClient.h"
 #import "MD5.h"
 
 #define DEFAULT_QUICK_CHAT_FILE     @"QuickChat.plist"
@@ -31,11 +31,11 @@ static ApplicationManager *sharedAppManager = nil;
     if (self) {
         _soundManager           = [[YBAudioManager alloc] init];
         _localSettingData       = [[LocalSettingData alloc] init];
-        _httpClientHandler      = [[HttpClientHandler alloc] init];
-        _manualDownloadManager  = [ManualDownloadManager sharedInstance];
+        //_httpClientHandler      = [[HttpClientHandler alloc] init];
+        //_manualDownloadManager  = [ManualDownloadManager sharedInstance];
         
-        _manualUplaodManager    = [ManualUplaodManager sharedInstance];
-        _manualUplaodManager.publicUploadTokenUrl = GET_PUBLIC_UPLOAD_TOKEN_URL;
+        //_manualUplaodManager    = [ManualUplaodManager sharedInstance];
+        //_manualUplaodManager.publicUploadTokenUrl = GET_PUBLIC_UPLOAD_TOKEN_URL;
         
         _timerManager           = [TimerManager sharedInstance];
 //        _xmppManager4Chat       = [[XmppManager4Chat alloc] init];
@@ -46,13 +46,14 @@ static ApplicationManager *sharedAppManager = nil;
         _inviteUserArray        = [[NSMutableArray alloc] init];
         _confirmList            = [[NSMutableArray alloc] init];
         
-        _configureObject        = [_localSettingData getConfigure];
-        if (_configureObject) {
-            _configureObject.update = [NSNumber numberWithBool:NO];
-        }
-        else {
-            _configureObject    = [[ConfigureObject alloc] init];
-        }
+        //_configureObject        = [_localSettingData getConfigure];
+        _configureObject    = [[ConfigureObject alloc] init];
+        //if (_configureObject) {
+        //    _configureObject.update = [NSNumber numberWithBool:NO];
+        //}
+        //else {
+        //    _configureObject    = [[ConfigureObject alloc] init];
+        //}
 //        _chatBuddyList          = [[NSMutableArray alloc] init];
         
         _isLogin                = NO;
@@ -73,9 +74,9 @@ static ApplicationManager *sharedAppManager = nil;
 - (void)dealloc {
     _soundManager           = nil;
     _localSettingData       = nil;
-    _httpClientHandler      = nil;
-    _manualDownloadManager  = nil;
-    _manualUplaodManager    = nil;
+    //_httpClientHandler      = nil;
+    //_manualDownloadManager  = nil;
+    //_manualUplaodManager    = nil;
     _timerManager           = nil;
 //    _xmppManager4Chat       = nil;
     _notificationManager    = nil;

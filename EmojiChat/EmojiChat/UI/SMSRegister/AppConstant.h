@@ -81,4 +81,10 @@
 #define		PF_FRIEND_CLASS_NAME				@"Friend"				//	Class name
 #define		PF_FRIEND_MSATER_OBJECT             @"master"			    //	master object
 #define		PF_FRIEND_BUDDY_OBJECT              @"buddy"                //	buddy object
+#define		PF_FRIEND_BUDDY_INDEX               @"index"                //	buddy index
+#define		PF_FRIEND_BUDDY_NICKNAME            @"nickName"             //	buddy nick name
+
+//-----------------------------------------------------------------------
+#define		PF_CONFIG_DOWN_URL                  @"downUrl"				//	download url
+#define		PF_CONFIG_EMOJI_SOUND               @"emojiSound"			//	emoji sound
 

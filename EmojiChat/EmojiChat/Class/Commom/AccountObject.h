@@ -19,7 +19,7 @@ typedef enum
 
 @interface AccountObject : NSObject
 
-@property (nonatomic, strong) NSNumber* userid;     // 用户的id
+@property (nonatomic, strong) NSString* userid;     // 用户的id
 @property (nonatomic, strong) NSString* nick;       // 昵称
 @property (nonatomic, strong) NSString* face;       // 头像地址（可以直接使用）
 @property (nonatomic, strong) NSString* phone;      // 手机号

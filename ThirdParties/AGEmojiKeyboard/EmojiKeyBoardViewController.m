@@ -1,39 +1,35 @@
 //
-//  ViewController.m
+//  EmojiKeyBoardViewController.m
 //  EmojiKeyboardTest
 //
-//  Created by michael on 21/5/15.
-//  Copyright (c) 2015 LeoEdu. All rights reserved.
+//  Created by michael on 15/5/31.
+//  Copyright (c) 2015年 LeoEdu. All rights reserved.
 //
 
-#import "ViewController.h"
-#import "AGEmojiKeyboardView.h"
 #import "EmojiKeyBoardViewController.h"
+#import "AGEmojiKeyboardView.h"
 
-@interface ViewController ()
+@interface EmojiKeyBoardViewController ()
 <
 AGEmojiKeyboardViewDelegate,
 AGEmojiKeyboardViewDataSource
 >
 {
-    //AGEmojiKeyboardView *emojiKeyboardView;
-    
-    EmojiKeyBoardViewController *keyBoard;
+    AGEmojiKeyboardView *emojiKeyboardView;
 }
 
 @property (strong, nonatomic) IBOutlet UITextField *textField;
 
-- (IBAction)onShowTouched:(id)sender;
-- (IBAction)onHideTouched:(id)sender;
+- (IBAction)onBackViewTouched:(id)sender;
 
 @end
 
-@implementation ViewController
+@implementation EmojiKeyBoardViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    //[self loadKeyboard];
+    // Do any additional setup after loading the view.
+    [self loadKeyboard];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -41,7 +37,25 @@ AGEmojiKeyboardViewDataSource
     // Dispose of any resources that can be recreated.
 }
 
-/*
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [self showKeyBoard];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self hideKeyBoard];
+}
+
+- (void)dealloc
+{
+    emojiKeyboardView = nil;
+}
+
+#pragma mark - private
 - (void)loadKeyboard
 {
     if (!emojiKeyboardView) {
@@ -49,37 +63,37 @@ AGEmojiKeyboardViewDataSource
         emojiKeyboardView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
         emojiKeyboardView.delegate = self;
     }
-
+    
     self.textField.inputView = emojiKeyboardView;
 }
-*/
-#pragma mark - action
-- (IBAction)onShowTouched:(id)sender
+
+#pragma mark - public
+- (IBAction)onBackViewTouched:(id)sender
 {
-    //[self.textField becomeFirstResponder];
-    if (keyBoard) {
-        [keyBoard showKeyBoard];
-        return;
+    if (self.backTouchBlock) {
+        self.backTouchBlock();
     }
-    keyBoard = [[EmojiKeyBoardViewController alloc] initWithNibName:@"EmojiKeyBoardViewController" bundle:nil];
-    [self addChildViewController:keyBoard];
-    [self.view addSubview:keyBoard.view];
-    __weak EmojiKeyBoardViewController *weakKeyBoard = keyBoard;
-    keyBoard.backTouchBlock = ^ { // hide key board
-        [weakKeyBoard hideKeyBoard];
-        //[weakKeyBoard.view removeFromSuperview];
-        //[weakKeyBoard removeFromParentViewController];
-    };
 }
 
-- (IBAction)onHideTouched:(id)sender
+#pragma mark - public
+- (void)showKeyBoard
 {
-    //[self.textField resignFirstResponder];
+    self.view.userInteractionEnabled = YES;
+    [self.textField becomeFirstResponder];
 }
-/*
+
+- (void)hideKeyBoard
+{
+    [self.textField resignFirstResponder];
+    self.view.userInteractionEnabled = NO;
+}
+
 #pragma mark - AGEmojiKeyboardViewDelegate
 - (void)emojiKeyBoardView:(AGEmojiKeyboardView *)emojiKeyBoardView didUseEmoji:(NSString *)emoji {
-    self.textField.text = emoji;
+    // self.textField.text = emoji;
+    if (self.emojiSelectedBlock) {
+        self.emojiSelectedBlock(emoji);
+    }
 }
 
 - (void)emojiKeyBoardViewDidPressBackSpace:(AGEmojiKeyboardView *)emojiKeyBoardView {
@@ -113,8 +127,8 @@ AGEmojiKeyboardViewDataSource
 }
 
 - (UIImage *)emojiKeyboardView:(AGEmojiKeyboardView *)emojiKeyboardView imageForNonSelectedCategory:(AGEmojiKeyboardViewCategoryImage)category {
-///    UIImage *img = [self randomImage];
-///    [img imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    ///    UIImage *img = [self randomImage];
+    ///    [img imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UIImage *img;
     if (category == AGEmojiKeyboardViewCategoryImageRecent) {
         img = [UIImage imageNamed:@"ic_emoji_recent_light_normal"];
@@ -134,16 +148,15 @@ AGEmojiKeyboardViewDataSource
     else if (category == AGEmojiKeyboardViewCategoryImageCharacters) {
         img = [UIImage imageNamed:@"ic_emoji_symbols_light_normal"];
     }
-
+    
     return img;
 }
 
 - (UIImage *)backSpaceButtonImageForEmojiKeyboardView:(AGEmojiKeyboardView *)emojiKeyboardView {
-//    UIImage *img = [self randomImage];
-//    [img imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    //    UIImage *img = [self randomImage];
+    //    [img imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UIImage *img = [UIImage imageNamed:@"orca_emoji_backspace_back_normal"];
     return img;
 }
-*/
 
 @end

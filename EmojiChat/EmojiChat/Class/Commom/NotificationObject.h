@@ -10,7 +10,7 @@
 
 @interface NotificationObject : NSObject
 
-@property (nonatomic, strong) NSNumber* senderid;   // 用户的id
+@property (nonatomic, strong) NSString* senderid;   // 用户的id
 @property (nonatomic, strong) NSString* message;    // 消息
 @property (nonatomic, strong) NSString* sound;      // 声音
 @property (nonatomic, strong) NSNumber* timestamp;  // 收到时间

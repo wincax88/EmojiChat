@@ -7,7 +7,7 @@
 //
 
 #import "AboutViewController.h"
-#import "HttpClient.h"
+//#import "HttpClient.h"
 
 @interface AboutViewController ()
 
@@ -36,7 +36,7 @@
     NSString* version = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
     self.versionLabel.text = [NSString stringWithFormat:@"版本 V %@", version];
 #ifdef DEBUG // for public test
-    self.urlLabel.text = YBWEB_SERVER_URL;
+//    self.urlLabel.text = YBWEB_SERVER_URL;
 #else
     self.urlLabel.hidden = YES;
     self.urlLabel.text = @"";
