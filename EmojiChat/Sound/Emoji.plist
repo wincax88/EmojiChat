@@ -8,7 +8,7 @@
 			<key>id</key>
 			<string>100</string>
 			<key>name</key>
-			<string>GrinningFace</string>
+			<string>Grinning Face</string>
 			<key>known as</key>
 			<string>Smiley Face,Happy Face</string>
 			<key>emoji</key>
@@ -61,6 +61,318 @@
 			<string>Smiley Face,Grinning Face,Happy Face</string>
 			<key>emoji</key>
 			<string>😄</string>
+			<key>sound</key>
+			<string>Face With Tears Of Joy.wav</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<string>105</string>
+			<key>name</key>
+			<string>Smiling Face With Open Mouth And Cold Sweat</string>
+			<key>known as</key>
+			<string>Happy Sweat, Exercise</string>
+			<key>emoji</key>
+			<string>😅</string>
+			<key>sound</key>
+			<string>Face With Tears Of Joy.wav</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<string>106</string>
+			<key>name</key>
+			<string>Smiling Face With Open Mouth And Tightly-Closed Eyes</string>
+			<key>known as</key>
+			<string>Big Grin,Closed-Eyes Smile</string>
+			<key>emoji</key>
+			<string>😆</string>
+			<key>sound</key>
+			<string>Face With Tears Of Joy.wav</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<string>107</string>
+			<key>name</key>
+			<string>Smiling Face With Halo</string>
+			<key>known as</key>
+			<string>Angel, Halo</string>
+			<key>emoji</key>
+			<string>😇</string>
+			<key>sound</key>
+			<string>Face With Tears Of Joy.wav</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<string>108</string>
+			<key>name</key>
+			<string>Smiling Face With Horns</string>
+			<key>known as</key>
+			<string>Happy Devil,Purple Devil,Red Devil,Devil,Devil Horns</string>
+			<key>emoji</key>
+			<string>😈</string>
+			<key>sound</key>
+			<string>Face With Tears Of Joy.wav</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<string>109</string>
+			<key>name</key>
+			<string>Imp</string>
+			<key>known as</key>
+			<string>Sad Devil,Purple Devil, Devil,Devil Horns,Purple Goblin</string>
+			<key>emoji</key>
+			<string>👿</string>
+			<key>sound</key>
+			<string>Face With Tears Of Joy.wav</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<string>110</string>
+			<key>name</key>
+			<string>Winking Face</string>
+			<key>known as</key>
+			<string>Winky Face,Wink Face, Wink</string>
+			<key>emoji</key>
+			<string>😉</string>
+			<key>sound</key>
+			<string>Face With Tears Of Joy.wav</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<string>111</string>
+			<key>name</key>
+			<string>Smiling Face With Smiling Eyes</string>
+			<key>known as</key>
+			<string>Smile,Smiley Face,Happy Face, Content</string>
+			<key>emoji</key>
+			<string>😊</string>
+			<key>sound</key>
+			<string>Face With Tears Of Joy.wav</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<string>112</string>
+			<key>name</key>
+			<string>White Smiling Face</string>
+			<key>known as</key>
+			<string>Smile,Smiley Face,Happy Face, Grinning Face</string>
+			<key>emoji</key>
+			<string>☺️</string>
+			<key>sound</key>
+			<string>Face With Tears Of Joy.wav</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<string>113</string>
+			<key>name</key>
+			<string>Face Savouring Delicious Food</string>
+			<key>known as</key>
+			<string>Smiley Tongue,Goofy Smile,Silly Smile</string>
+			<key>emoji</key>
+			<string>😋</string>
+			<key>sound</key>
+			<string>Face With Tears Of Joy.wav</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<string>114</string>
+			<key>name</key>
+			<string>Relieved Face</string>
+			<key>known as</key>
+			<string>Pleased,Content</string>
+			<key>emoji</key>
+			<string>😌</string>
+			<key>sound</key>
+			<string>Face With Tears Of Joy.wav</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<string>115</string>
+			<key>name</key>
+			<string>Smiling Face With Heart-Shaped Eyes</string>
+			<key>known as</key>
+			<string>Heart Eyes,Heart Face</string>
+			<key>emoji</key>
+			<string>😍</string>
+			<key>sound</key>
+			<string>Face With Tears Of Joy.wav</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<string>116</string>
+			<key>name</key>
+			<string>Smiling Face With Sunglasses</string>
+			<key>known as</key>
+			<string>Cool,Sunglasses,Sunnies,Snapchat Mutual Best Friends</string>
+			<key>emoji</key>
+			<string>😎</string>
+			<key>sound</key>
+			<string>Face With Tears Of Joy.wav</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<string>117</string>
+			<key>name</key>
+			<string>Smirking Face</string>
+			<key>known as</key>
+			<string>Suggestive Smile,Flirting,Sexual Face,Smug Face</string>
+			<key>emoji</key>
+			<string>😏</string>
+			<key>sound</key>
+			<string>Face With Tears Of Joy.wav</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<string>118</string>
+			<key>name</key>
+			<string>Neutral Face</string>
+			<key>known as</key>
+			<string>Straight Faced,Face With Straight Mouth</string>
+			<key>emoji</key>
+			<string>😑</string>
+			<key>sound</key>
+			<string>Face With Tears Of Joy.wav</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<string>119</string>
+			<key>name</key>
+			<string>Expressionless Face</string>
+			<key>known as</key>
+			<string>Robot Face,Face With Straight Mouth</string>
+			<key>emoji</key>
+			<string>😑</string>
+			<key>sound</key>
+			<string>Face With Tears Of Joy.wav</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<string>120</string>
+			<key>name</key>
+			<string>Face With Cold Sweat</string>
+			<key>known as</key>
+			<string>Hard Work,Sad Sweat Face</string>
+			<key>emoji</key>
+			<string>😓</string>
+			<key>sound</key>
+			<string>Face With Tears Of Joy.wav</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<string>121</string>
+			<key>name</key>
+			<string>Pensive Face</string>
+			<key>known as</key>
+			<string>Pensive,Sadface,Sad,Sorrowful</string>
+			<key>emoji</key>
+			<string>😔</string>
+			<key>sound</key>
+			<string>Face With Tears Of Joy.wav</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<string>122</string>
+			<key>name</key>
+			<string>Confused Face</string>
+			<key>known as</key>
+			<string>Nonplussed,Puzzled</string>
+			<key>emoji</key>
+			<string>😕</string>
+			<key>sound</key>
+			<string>Face With Tears Of Joy.wav</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<string>123</string>
+			<key>name</key>
+			<string>Confounded Face</string>
+			<key>known as</key>
+			<string>Quivering Mouth,Scrunched Face</string>
+			<key>emoji</key>
+			<string>😖</string>
+			<key>sound</key>
+			<string>Face With Tears Of Joy.wav</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<string>124</string>
+			<key>name</key>
+			<string>Kissing Face</string>
+			<key>known as</key>
+			<string>Kissy Face,Whistling,Duck Face</string>
+			<key>emoji</key>
+			<string>😗</string>
+			<key>sound</key>
+			<string>Face With Tears Of Joy.wav</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<string>125</string>
+			<key>name</key>
+			<string>Face Throwing A Kiss</string>
+			<key>known as</key>
+			<string>Blowing Kiss,Blow A Kiss,Kissing,Kiss Face,Kissy Face</string>
+			<key>emoji</key>
+			<string>😘</string>
+			<key>sound</key>
+			<string>Face With Tears Of Joy.wav</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<string>126</string>
+			<key>name</key>
+			<string>Kissing Face With Smiling Eyes</string>
+			<key>known as</key>
+			<string>Kissy,Kissy Face,Whistling,Whistle</string>
+			<key>emoji</key>
+			<string>😙</string>
+			<key>sound</key>
+			<string>Face With Tears Of Joy.wav</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<string>127</string>
+			<key>name</key>
+			<string>Kissing Face With Closed Eyes</string>
+			<key>known as</key>
+			<string>Kissy Face,Kiss Face</string>
+			<key>emoji</key>
+			<string>😚</string>
+			<key>sound</key>
+			<string>Face With Tears Of Joy.wav</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<string>128</string>
+			<key>name</key>
+			<string>Face With Stuck-Out Tongue</string>
+			<key>known as</key>
+			<string>Tongue-Out,Cheeky,Tongue Face</string>
+			<key>emoji</key>
+			<string>😛</string>
+			<key>sound</key>
+			<string>Face With Tears Of Joy.wav</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<string>129</string>
+			<key>name</key>
+			<string>Face With Stuck-Out Tongue And Winking Eye</string>
+			<key>known as</key>
+			<string>Crazy,Crazy Face</string>
+			<key>emoji</key>
+			<string>😜</string>
+			<key>sound</key>
+			<string>Face With Tears Of Joy.wav</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<string>130</string>
+			<key>name</key>
+			<string>Face With Stuck-Out Tongue And Tightly-Closed Eyes</string>
+			<key>known as</key>
+			<string>Tongue Out</string>
+			<key>emoji</key>
+			<string>😝</string>
 			<key>sound</key>
 			<string>Face With Tears Of Joy.wav</string>
 		</dict>
